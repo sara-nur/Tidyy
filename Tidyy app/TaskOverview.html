@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/TaskOverview.css">
+</head>
+<body>
+    <header>
+        <h2>Tidyy</h2>
+        <div id="SearchBar">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Q</button>
+        </div>
+        <div>
+            <label id="Username">John Smith</label>
+            <div id="profileOptions">
+                <label>Log out</label>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <nav>
+            <select name="OrganisationSelect" id="OrganisationSelect" onchange="chagePage()">
+                <option value="Test">Select organisation</option>
+                <option value="Test" >Test Organisaton</option>
+            </select>
+            
+            <select name="ProjectSelect" id="ProjectSelect" onchange="goToProjectOne()">
+                <option value="Project #2" >Chose project</option>
+                <option value="Project #2" onclick="goToProjectOne()">Project #1</option>
+                <option value="Saras Project">Project #2</option>
+                <option id="noviElementDropLista">Novi projekat</option>
+            </select>
+            <button>Calendar</button><br>
+            <button id="TeamButton">Teams</button>
+        </nav>
+        <div id="mainContent">
+            <div class="PageOverview">
+                
+                <div class="breadcrums">
+                        <label onclick="goToPrevious()">Test Organisation</label><br>
+                        <label id="linkToPrevious">Project #1</label>
+                </div>
+                <div class="buttons">
+                    <button id="newTask">New task +</button>
+                    <button id="allTasks">All tasks</button>
+                    <button id="myTasks">My tasks</button>
+                </div>
+            </div>
+            
+            <div class="TaskBoard">
+                <div class="ToDoColumn">
+                    <div class="ProgresLabel"><h3>To do:</h3></div>
+                    <div class="TaskCard" id="taskOne">
+                        <label>Task #1</label><br>
+                        <label>Due date:24/2/2024</label><br>
+                        <label>Priority: Urgent</label><br>
+                        <label>Progress: 0%</label><br>
+                        <label>Asignee: Dev team</label><br>
+                    </div>
+                    <div class="TaskCard" id="NotMyTask4">
+                        <label>Task #2</label><br>
+                        <label>Due date:24/2/2024</label><br>
+                        <label>Priority: Urgent</label><br>
+                        <label>Progress: 0%</label><br>
+                        <label>Asignee: Ui team</label><br>
+                    </div>
+                </div>
+    
+                <div class="InProgressColumn">
+                    <div class="ProgresLabel"><h3>In progress:</h3></div>
+                    <div class="TaskCard">
+                        <label>Task #3</label><br>
+                        <label>Due date:24/2/2024</label><br>
+                        <label>Priority: Urgent</label><br>
+                        <label>Progress: 50%</label><br>
+                        <label>Asignee: Dev team</label><br>
+                    </div>
+                    <div class="TaskCard" id="NotMyTask3">
+                        <label>Task #4</label><br>
+                        <label>Due date:24/2/2024</label><br>
+                        <label>Priority: Urgent</label><br>
+                        <label>Progress: 67%</label><br>
+                        <label>Asignee: Ui team</label><br>
+                    </div>
+                </div>
+    
+                <div class="FinishedColumn">
+                    <div class="ProgresLabel"><h3>Finished:</h3></div>
+                    <div class="TaskCard" id="NotMyTask2">
+                        <label>Task #5</label><br>
+                        <label>Due date:24/2/2024</label><br>
+                        <label>Priority: Urgent</label><br>
+                        <label>Progress: 100%</label><br>
+                        <label>Asignee: Ui team</label><br>
+                    </div>
+                    <div class="TaskCard" id="NotMyTask1">
+                        <label>Task #6</label><br>
+                        <label>Due date:24/2/2024</label><br>
+                        <label>Priority: Urgent</label><br>
+                        <label>Progress: 100%</label><br>
+                        <label>Asignee: Ui team</label><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="banner">
+                    <h2>Create new sub-task</h2>
+                </div>
+                <div class="inputFields">
+                    <input type="text" placeholder="Name:">
+                    <input type="date" name="StartDate" id="startDate">
+                    <input type="date" name="EndDate" id="endDate">
+                    <select name="TypeSelect" id="TypeSelect">
+                        <option value="Bug">Bug</option>
+                        <option value="Update">Update</option>
+                        <option value="Ui">Ui</option>
+                    </select>
+                    <select name="TeamSelect" id="teamSelect">
+                        <option value="Team1">Team #1</option>
+                        <option value="Team2">Team #2</option>
+                        <option value="Team3">Team #3</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button id="CreateButton">Create</button>
+                    <button id="CancelButton">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("newTask");
+            var cancelBtn = document.getElementById("CancelButton");
+    
+            btn.onclick=function()
+            {
+                modal.style.display = "block";
+            }
+    
+            function goToProjectOne()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/TaskOverview.html";
+            }
+            function goToPrevious()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html";
+            }
+            cancelBtn.onclick = function()
+            {
+                modal.style.display = "none";
+            }
+
+            var usernameBtn = document.getElementById("Username");
+            var loginBar=document.getElementById("profileOptions");
+
+            var counter = 0;
+            usernameBtn.onclick=function()
+            {
+                
+                if(counter % 2 == 0)
+                {
+                    loginBar.style.display="block";
+                }
+                else{
+                    loginBar.style.display="none";
+                }
+                counter = counter+1;
+            }
+            loginBar.onclick=function()
+            {
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/index.html";
+            }
+
+            function chagePage()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html"
+            }
+
+            var allTaskBtn = document.getElementById("allTasks");
+            var myTaskBtn = document.getElementById("myTasks");
+            var tasks1 =  document.getElementById("NotMyTask1");
+            var tasks2 =  document.getElementById("NotMyTask2");
+            var tasks3 =  document.getElementById("NotMyTask3");
+            var tasks4 =  document.getElementById("NotMyTask4");
+            allTaskBtn.onclick = function(){
+                tasks1.style.display="block";
+                tasks2.style.display="block";
+                tasks3.style.display="block";
+                tasks4.style.display="block";
+                allTaskBtn.style.backgroundColor = "#092635";
+                myTaskBtn.style.backgroundColor = "#4B6E7C";
+            }
+
+            myTaskBtn.onclick = function(){
+                tasks1.style.display="none";
+                tasks2.style.display="none";
+                tasks3.style.display="none";
+                tasks4.style.display="none";
+                myTaskBtn.style.backgroundColor = "#092635";
+                allTaskBtn.style.backgroundColor = "#4B6E7C";
+            }
+
+            var taskBtn = document.getElementById("taskOne");
+
+            taskBtn.onclick = function(){
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/SubTaskOverview.html"
+            }
+
+            var teamsBtn=document.getElementById("TeamButton");
+        teamsBtn.onclick = function()
+        {
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/Teams.html"
+        }
+        </script>
+        
+</body>
+</html>

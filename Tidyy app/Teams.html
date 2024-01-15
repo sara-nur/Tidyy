@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/Teams.css">
+</head>
+<body>
+    <header>
+        <h2>Tidyy</h2>
+        <div id="SearchBar">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Q</button>
+        </div>
+        <div>
+            <label id="Username">John Smith</label>
+            <div id="profileOptions">
+                <label>Log out</label>
+            </div>
+        </div>
+    </header>
+   
+    <main>
+        <nav>
+            <select name="OrganisationSelect" id="OrganisationSelect" onchange="chagePage()">
+                <option value="Test">Select organisation</option>
+                <option value="Test">Test Organisaton</option>
+            </select>
+            
+            <select name="ProjectSelect" id="ProjectSelect" onchange="goToProjectOne()">
+                <option value="Project #2" >Chose project</option>
+                <option value="Project #2" onclick="goToProjectOne()">Project #1</option>
+                <option value="Saras Project">Project #2</option>
+                <option id="noviElementDropLista">Novi projekat</option>
+            </select>
+            <button>Calendar</button><br>
+            <button onclick="TeamLoad()">Teams</button>
+        </nav>
+        <div id="mainContent">
+            <div class="PageOverview">
+                <div class="breadcrums">
+                    <label >Test Organisaton</label><br>
+                    <label>Teams</label>
+                </div>
+                <div class="buttons">
+                    <button id = "newTeam">New team +</button>
+                </div>
+            </div>
+            <div id="NumberOfTeams">Total teams: 2</div>
+            <div class="TeamList">
+                    <div class="teams">
+                        <label>dev team</label>
+                    </div>
+                    <div class="teams">
+                        <label>Ui team</label>
+                    </div>
+            </div>
+        </div>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="banner">
+                <h2>Create new orgainstaion</h2>
+            </div>
+            <div class="inputFields">
+                <input type="text" placeholder="Name:">
+                <select name="TeamSelect" id="teamSelect">
+                    <option value="Dev">Dev</option>
+                    <option value="Ui">Ui</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button id="CreateButton">Create</button>
+                <button id="CancelButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("newTeam");
+        var cancelBtn = document.getElementById("CancelButton");
+
+        btn.onclick=function()
+        {
+            modal.style.display = "block";
+        }
+
+        cancelBtn.onclick = function()
+        {
+            modal.style.display = "none";
+        }
+
+        function goToProjectOne()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/TaskOverview.html";
+            }
+
+        function chagePage()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html"
+            }
+
+        var usernameBtn = document.getElementById("Username");
+            var loginBar=document.getElementById("profileOptions");
+
+            var counter = 0;
+            usernameBtn.onclick=function()
+            {
+                
+                if(counter % 2 == 0)
+                {
+                    loginBar.style.display="block";
+                }
+                else{
+                    loginBar.style.display="none";
+                }
+                counter = counter+1;
+            }
+            loginBar.onclick=function()
+            {
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/index.html";
+            }
+
+    </script>
+</body>
+</html>

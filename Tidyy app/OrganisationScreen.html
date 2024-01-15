@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/OrgainsationScreen.css">
+</head>
+<body>
+    <header>
+        <h2>Tidyy</h2>
+        <div id="SearchBar">
+            <input  type="text" placeholder="Search..." name="search">
+            <button type="submit">Q</button>
+        </div>
+        <div>
+            <label id="Username">John Smith</label>
+            <div id="profileOptions">
+                <label>Log out</label>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <nav>
+            <select name="OrganisationSelect" id="OrganisationSelect">
+                <option value="Test">Test Organisaton</option>
+            </select>
+            
+            <select name="ProjectSelect" id="ProjectSelect" onchange="goToProjectOne()">
+                <option value="Project #1">Chose Project</option>
+                <option value="Project #2">Project #1</option>
+                <option value="Saras Project">Project #2</option>
+                <option id="noviElementDropLista">Novi projekat</option>
+            </select>
+            <button>Calendar</button>
+            <button id="TeamButton">Teams</button>
+        </nav>
+        <div id="mainContent">
+            <div class="PageOverview">
+                <div class="breadcrums">
+                    <label>Test organisation</label><br>
+                    <label>Projects</label>
+                </div>
+                <div class="buttons">
+                    <button id="addMember">Add member</button>
+
+                    <button id="newProject">New project +</button>
+                </div>
+            </div>
+            <div class="ProjectBoard">
+                <div class="ProjectCard" id="projectOne">
+                    <label>Test project</label><br>
+                    <label>Project #1</label>
+                </div>
+                <div class="ProjectCard">
+                    <label>Test project</label><br>
+                    <label>Project #2</label>
+                </div>
+                <div class="ProjectCard" id="newProjectCard">
+                    <label>Test project</label><br>
+                    <label>Novi projekat</label>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </main>
+    <div id="myModalProject" class="modal">
+        <div class="modal-content">
+            <div class="banner">
+                <h2>Create new sub-task</h2>
+            </div>
+            <div class="inputFields">
+                <input type="text"  id="NewPrName"  placeholder="Name:" value="" >
+                <input type="date" name="StartDate" id="startDate" value="">
+                <input type="date" name="EndDate" id="endDate" value="">
+                <input type="text" placeholder="GitHub url:" value="">
+            </div>
+            <div id="errorMessageProjec">
+                <label>There is already a project with that name</label>
+            </div>
+
+            <div class="buttons">
+                <button id="CreateButtonProject">Create</button>
+                <button id="CancelButtonProject">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModalMember" class="modal">
+        <div class="modal-content">
+            <div class="banner">
+                <h2>Create new orgainstaion</h2>
+            </div>
+            <div class="inputFields">
+                <input type="text" placeholder="Name/Id/e-mail:" value="">
+            </div>
+            <div class="buttons">
+                <button id="CreateButtonMember">Create</button>
+                <button id="CancelButtonMember">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var member = document.getElementById("myModalMember");
+        var project = document.getElementById("myModalProject");
+        var btnMember = document.getElementById("addMember");
+        var btnProject = document.getElementById("newProject")
+        var cancelBtnMember = document.getElementById("CancelButtonMember");
+        var cancelButtonProject = document.getElementById("CancelButtonProject");
+        var teamsBtn=document.getElementById("TeamButton");
+
+        btnMember.onclick=function()
+        {
+            member.style.display = "block";
+        }
+
+        function goToProjectOne()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/TaskOverview.html";
+            }
+
+        btnProject.onclick=function()
+        {
+            project.style.display = "block";
+        }
+
+        cancelBtnMember.onclick = function()
+        {
+            member.style.display = "none";
+        }
+
+        cancelButtonProject.onclick = function()
+        {
+            project.style.display = "none";
+        }
+
+        var teamsBtn=document.getElementById("TeamButton");
+        teamsBtn.onclick = function()
+        {
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/Teams.html"
+        }
+
+        var CreateButton = document.getElementById("CreateButtonProject");
+        var errorBlock = document.getElementById("errorMessageProjec");
+        var newPr = document.getElementById("newProjectCard");
+        var newProjectTag = document.getElementById("noviElementDropLista");
+        CreateButton.onclick = function ()
+        {
+            
+            var proName = document.getElementById("NewPrName").value;
+            if(proName == "Project #1" || proName == "Project #2"){
+                errorBlock.style.display="block";
+            }
+            else{
+                newPr.style.display="block";
+                project.style.display = "none";
+                newProjectTag.style.display="block";
+            }
+        }
+
+
+        var kartica = document.getElementById("projectOne");
+        kartica.onclick = function()
+        {
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/TaskOverview.html"
+        }
+
+
+        var usernameBtn = document.getElementById("Username");
+            var loginBar=document.getElementById("profileOptions");
+
+            var counter = 0;
+            usernameBtn.onclick=function()
+            {
+                
+                if(counter % 2 == 0)
+                {
+                    loginBar.style.display="block";
+                }
+                else{
+                    loginBar.style.display="none";
+                }
+                counter = counter+1;
+            }
+            loginBar.onclick=function()
+            {
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/index.html";
+            }
+            
+
+            function chagePage()
+        {
+        
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html"
+        }
+
+        function chagePage()
+        {
+        
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html"
+        }
+
+        var taskBtn = document.getElementById("taskOne");
+
+            taskBtn.onclick = function(){
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/SubTaskNotes.html"
+            }
+
+            var teamsBtn=document.getElementById("TeamButton");
+        teamsBtn.onclick = function()
+        {
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/Teams.html"
+        }
+    </script>
+
+
+</body>
+</html>

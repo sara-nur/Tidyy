@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
+
+header{
+    width: 100%;
+    height: 50px;
+    background-color: #092635 ;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h2 { margin-left: 15px;}
+header label {margin-right: 15px;}
+
+#SearchBar{
+    border: #fff;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+#SearchBar input{
+    height: 20px;
+    width: 350px;
+    background-color: #092635;
+    border: none;
+    margin-left: 3px;
+}
+
+#SearchBar button{
+    height: 25px;
+    width: 20px;
+    background-color: #092635;
+    border: none;
+    border-radius: 10px;
+}
+
+nav{
+    width: 15%;
+    height: 1000px;
+    background-color: #092635;
+    padding: 60px 30px;
+
+}
+
+main
+{
+    display: flex;
+    flex-direction: row;
+    background-color: #F5F5F5;
+}
+
+#mainContent{
+    width: 100%;
+}
+
+.PageOverview{
+    width: 100%;
+    margin-top: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #4B6E7C ;
+}
+
+.PageOverview .buttons button
+{
+    background-color: #092635;
+    height: 35px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 7px;
+    margin-right: 10px;
+    
+}
+.breadcrums{
+    width: 300px;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+nav button, nav select, nav a
+{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    border-style: solid 2px;
+    border-color: black;
+    background-color: #F5F5F5 ;
+    font-size: 25px;
+}
+
+nav option{ color: black; font-size: 25px;}
+
+#profileOptions{
+    display: none;
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #092635;
+    background-color: #F5F5F5;
+    text-align: center;
+   
+}
+
+
+#profileOptions label{
+    color: black;
+    margin-top: 10px;
+}
+
+#myTasks{
+    background-color: #4B6E7C;
+    border: solid #092635 5px;
+}
+
+#allTasks{
+    border: solid #092635 5px;
+}

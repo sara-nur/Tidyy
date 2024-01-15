@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidyy</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/HomeScreen.css">
+
+</head>
+<body>
+    <header>
+        <h2>Tidyy</h2>
+        <div id="SearchBar">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Q</button>
+        </div>
+        <div>
+            <label id="Username">John Smith</label>
+            <div id="profileOptions">
+                <label>Logout</label>
+            </div>
+        </div>
+    </header>
+   
+    <main>
+        <nav>
+            <select name="OrganisationSelect" id="OrganisationSelect" onchange="chagePage()">
+                <option value="">Select orgainstaion</option>
+                <option  value="">testOrganisaton</option>
+            </select>
+            <br>
+            <button id="newOrgButton">New organisation +</button>
+        </nav>
+        <div id="mainContent">
+            <h2>Welcome to Tidyy</h2>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="banner">
+                <h2>Create new orgainstaion</h2>
+            </div>
+            <div class="inputFields">
+                <input type="text" placeholder="Name:">
+                <select name="MemberSelect" id="MemberSelect">
+                    <option value="Admir">Admir</option>
+                    <option value="Sara">Sara</option>
+                    <option value="Amar">Amar</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button id="CreateButton">Create</button>
+                <button id="CancelButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("newOrgButton");
+        var cancelBtn = document.getElementById("CancelButton");
+
+        var usernameBtn = document.getElementById("Username");
+        var loginBar=document.getElementById("profileOptions");
+
+        btn.onclick=function()
+        {
+            modal.style.display = "block";
+        }
+
+        cancelBtn.onclick = function()
+        {
+            modal.style.display = "none";
+        }
+
+        usernameBtn.onclick=function()
+        {
+            loginBar.style.display="block";
+        }
+
+        loginBar.onclick=function()
+        {
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/index.html";
+        }
+
+        function chagePage()
+        {
+        
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html"
+        }
+
+        
+
+    </script>
+
+</body>
+</html>

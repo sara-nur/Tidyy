@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    
+}
+
+body{
+    background-color: #092635;
+    text-align: center;
+}
+
+h1{
+    font-size: 150px;
+    padding-top: 50px;
+}
+h2{padding-top:10px ;}
+input{
+    height: 30px;
+    width: 10%;
+    color: black;
+    padding:1px 5px;
+    font-size: 20px;
+}
+label{font-size: 30px;}
+
+#PasswordInput{
+    padding: 20px;
+    
+}
+
+#UsernameInput{
+    padding: 20px;
+    padding-top: 40px;
+}
+
+
+button{
+    background-color: #F5F5F5;
+    height: 50px;
+    width: 10%;
+    color: black;
+    border-radius: 10px;
+    border: solid black 1px;
+
+} 
+
+#errorMessage{
+    display: none;
+    padding-bottom: 10px;
+}

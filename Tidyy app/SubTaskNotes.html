@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/SubTaskNotes.css">
+</head>
+<body>
+    <header>
+        <h2>Tidyy</h2>
+        <div id="SearchBar">
+            <input type="text" placeholder="Search..." name="search">
+            <button type="submit">Q</button>
+        </div>
+        <div>
+            <label id="Username">John Smith</label>
+            <div id="profileOptions">
+                <label>Log out</label>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <nav>
+            <select name="OrganisationSelect" id="OrganisationSelect" onchange="chagePage()">
+                <option value="Test">Select organisation</option>
+                <option value="Test">Test Organisaton</option>
+            </select>
+            
+            <select name="ProjectSelect" id="ProjectSelect" onchange="goToProjectOne()">
+                <option value="Project #2" >Select project</option>
+                <option value="Project #2">Project #1</option>
+                <option value="Saras Project">Project #2</option>
+                <option id="noviElementDropLista">Novi projekat</option>
+            </select>
+            <button>Calendar</button><br>
+            <button id="TeamButton">Teams</button>
+        </nav>
+        <div id="mainContent">
+            <div class="PageOverview">
+                <div class="breadcrums">
+                    <label onclick="goToPrevious()">Test Organisation/Project #1/Task #1</label><br>
+                    <label id="linkToPrevious">Sub-task #1</label>
+                </div>
+                <div class="buttons">
+                    <button>Edit</button>
+                    <button>Finish</button>
+                </div>
+            </div>
+            <div class="Notes">
+                <h3>To do:</h3>
+
+                <textarea name="Notes" id="notes">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper quis lectus nulla at volutpat. Tellus mauris a diam maecenas sed enim ut. Ac turpis egestas integer eget aliquet nibh praesent. Ultrices gravida dictum fusce ut placerat. Felis eget nunc lobortis mattis. Erat imperdiet sed euismod nisi porta lorem mollis. Tristique senectus et netus et malesuada fames. Mi proin sed libero enim sed faucibus turpis in eu. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel orci. Amet consectetur adipiscing elit duis tristique sollicitudin nibh. Euismod nisi porta
+                </textarea>
+                <p></p>  
+            </div>
+        </div>
+        
+    </main>
+
+    <script >
+        var txtInput= document.getElementById("notes");
+
+        function chagePage()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html";
+            }
+
+            function goToPrevious()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/SubTaskOverview.html";
+            }
+            
+
+            function goToProjectOne()
+            {
+        
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/TaskOverview.html";
+            }
+
+        var usernameBtn = document.getElementById("Username");
+            var loginBar=document.getElementById("profileOptions");
+
+            var counter = 0;
+            usernameBtn.onclick=function()
+            {
+                
+                if(counter % 2 == 0)
+                {
+                    loginBar.style.display="block";
+                }
+                else{
+                    loginBar.style.display="none";
+                }
+                counter = counter+1;
+            }
+            loginBar.onclick=function()
+            {
+                location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/index.html";
+            }
+            function chagePage()
+        {
+        
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/OrganisationScreen.html"
+        }
+
+        var teamsBtn=document.getElementById("TeamButton");
+        teamsBtn.onclick = function()
+        {
+            location.href="file:///C:/Users/Admir/Desktop/Tidyy%20app/Teams.html"
+        }
+    </script>
+</body>
+</html>
