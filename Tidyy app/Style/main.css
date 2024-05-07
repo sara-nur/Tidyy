@@ -1,0 +1,503 @@
+
+/* VARIABLES -OPEN*/
+:root
+{
+    --TXTCOLOR: whitesmoke;
+    --FIRSTGRCOLOR: #092635;
+    --SECONDGRCOLOR:#03334b;
+    --BACKCOLORFRONTPAGE: papayawhip;
+    --HIGHLIGHTCOLOR:#0e3f57; /* HOVER COLOR */
+    --BACKCOLOR: #F5F5F5;
+    --DROPDOWNHIGHLIGHTCOLOR:#d7d6d6;
+    --MODALBORDERCOLOR:rgba(108, 162, 187, 0.7);
+}
+/* VARIABLES -CLOSE*/
+
+/*RESET -OPEN*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: var(--TXTCOLOR);
+    border: none;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--TXTCOLOR);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--BACKCOLOR);
+}
+
+a{
+    display: block;
+}
+
+ul{
+    list-style: none;
+    
+}
+
+/*RESET -CLOSE*/
+
+/* BACKGROUND IMAGES FOR LOGIN PAGE -OPEN*/
+.login-page{
+    width: min(30vh,500px);
+    height: auto;
+    position: absolute;
+    z-index: -1;
+}
+
+.too-do{
+    top: 120px; 
+    left: 130px;
+}
+
+.check{
+   bottom: 70px; 
+   right: 240px;
+}
+
+.team{
+    bottom: 470px; 
+   right: 540px;
+}
+
+.time{
+    width: min(35vh,500px);
+    height: auto;
+    bottom: 170px; 
+   left: 300px;
+}
+
+.collab{
+    width: min(20vh,300px);
+    height: auto;
+    top: 120px; 
+    right: 130px;
+}
+/* BACKGROUND IMAGES FOR LOGIN PAGE -CLOSE*/
+
+/* MODALS -OPEN*/
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.background{
+    display: grid;
+    place-content: center;
+}
+
+.register{
+    height: 650px;
+}
+
+.create{
+    width: 550px;
+    height: 600px;
+}
+
+.input-box{
+    
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(var(--FIRSTGRCOLOR),var(--SECONDGRCOLOR));
+    filter: drop-shadow(0 0 0.25rem black);
+    min-height: 500px;
+    min-width: 400px;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+.input-box h2{
+    padding: 1rem;
+    font-size: 2rem;
+    border-bottom: 4px double var(--TXTCOLOR);
+}
+
+.input-box form{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    width: 85%;
+}
+
+form button,form input, form p{
+    margin: 1rem 0;
+}
+
+
+
+form input ,form button{
+    height: 10%;
+    font-size: 1.5rem;
+    color: var(--TXTCOLOR);    
+}
+
+input{
+    text-align: left;
+    padding: 0.45rem;
+    background-color: transparent;
+    border-bottom: 1px solid var(--TXTCOLOR);
+}
+
+form button{
+    text-align: center;
+    background-color: var(--FIRSTGRCOLOR);
+    border-radius: 1rem;
+    border: 1px solid var(--TXTCOLOR);
+}
+
+/* MODALS -CLOSE*/
+
+/* ERROR HANDELERS -OPEN*/
+.error-message-container{
+    min-height: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.error-message{
+    display: none;
+}
+/* ERROR HANDELERS -CLOSE*/
+
+/* PSEUDO -OPEN*/
+input::placeholder{
+    color: var(--TXTCOLOR);
+}
+
+form input:hover ,form button:hover, a:hover,.search-btn:hover{
+    
+    background-color:var(--HIGHLIGHTCOLOR) ;
+}
+
+.orgainsaiton-select-dropdown a:hover ,.sidebar-button:hover{
+    background-color: var(--DROPDOWNHIGHLIGHTCOLOR);
+}
+
+li:first-child a{
+    border-radius:2rem 2rem 0 0 ;
+}
+
+li:last-child a{
+    border-radius:0 0 2rem 2rem ;
+    border: none;
+}
+
+.banner-information a:hover{
+    background-color: transparent;
+}
+
+.sidebar-button a:hover{
+    background-color: var(--DROPDOWNHIGHLIGHTCOLOR);
+}
+
+/* PSEUDO -CLOSE*/
+
+header{
+    background-image: linear-gradient(var(--FIRSTGRCOLOR),var(--SECONDGRCOLOR));
+    min-height: 70px;
+    filter: drop-shadow(0 0 0.25rem black);
+}
+
+/* HEADER FOT THE MAIN SITE -OPEN */
+.header-profile-picture
+{
+    height: 50px;
+    width: auto;
+}
+
+.search-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-header figure{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.search-header figure p{
+   padding-right: 0.7rem;
+   font-size: 1.2rem;
+}
+
+.search-header span{
+    display: flex;
+}
+
+.search-header input{
+    height: 40px;
+    font-size: 1.5rem;
+}
+
+.search-btn{
+    height:40px ;
+    width: 40px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--TXTCOLOR);
+}
+
+.search-btn img{
+   width: 100%;
+   height: 100%;
+}
+
+.search-header h1{
+    padding-left: 0.7rem ;
+    font-size: 2.5rem;
+}
+
+.profile-options-dropdown{
+    display: none;
+    position: fixed	;
+    background-color: var(--SECONDGRCOLOR);
+    min-height: 20px;
+    width: 160px;
+    right: 0;
+    top: 70px;
+}
+
+.profile-options-dropdown ul li a{
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+/* HEADER FOT THE MAIN SITE -CLOSE */
+
+/* MAIN - OPEN */
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 1;
+}
+
+.main-content{
+    width: 75%;
+}
+
+.main-content h2{
+    color: black;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+/* MAIN - CLOSE */
+
+/* SIDE BAR -OPEN*/
+aside{
+    background-image: linear-gradient(var(--SECONDGRCOLOR),var(--FIRSTGRCOLOR));
+    width: 25%;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+.sidebar-controls{
+    width: 100%;
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-button,.orgainsaiton-select-dropdown {
+    background-color: var(--BACKCOLOR);
+    color: black;
+    width: 80%;
+    text-align: center;
+    border-radius: 2rem;
+    border: 2px solid black;
+    font-size: 1.5rem;    
+}
+
+.a-tag{
+    padding: 0;
+}
+
+.sidebar-button{
+    margin-top: 2rem;
+}
+
+
+
+aside ul li a, aside button{
+    color: black;
+    padding: 1rem;
+}
+
+aside ul li a{
+    border-bottom: 1px solid black;
+}
+
+.organisaton-select{
+    width: 100%;
+}
+
+.orgainsaiton-select-dropdown
+{
+   position: fixed;
+   width:286.72px
+}
+
+.organisation-dropdown{
+    display: none;
+}
+
+.project-dropdown{
+    display: none;
+    position: fixed;
+    bottom: 295px;
+}
+
+.sidebar-button a{
+    color: black;
+    border-radius: 2rem;
+    padding: 1rem;
+}
+/* SIDE BAR -CLOSE*/
+
+.login-header
+{
+    display: grid;
+    place-content: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+
+
+.login-body{
+    background-color: var(--BACKCOLORFRONTPAGE);
+    display: flex;
+}
+
+.login-main{
+    display: grid;
+    place-content: center;
+    flex-grow: 1;
+    width: 100vw;
+}
+
+
+/* BANNER - OPEN */
+
+.overview-banner{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--MODALBORDERCOLOR);
+    margin-top: 2rem;
+    height: 6rem;
+    align-items: center;
+}
+
+.banner-information{
+    margin-left: 1.5rem;
+}
+
+
+.banner-information figure {
+    display: flex;
+    align-items: center;
+}
+
+.banner-information a{
+    display: inline-block;
+    color: black;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.banner-buttons button{
+    font-size: 1.5rem;
+    background-color: var(--FIRSTGRCOLOR);
+    padding: 0.70rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+
+}
+
+.banner-information figure img{
+    height: 50px;
+    width: auto;
+}
+
+.banner-information h2{
+    font-size:2rem ;
+    margin: 0;
+    margin-left: 1rem;
+}
+/* BANNER - OPEN */
+
+
+/* PROGRES COLUMNS - OPEN */
+.card-layout{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.column-label{
+    width: 200px;
+    background-image: linear-gradient(var(--FIRSTGRCOLOR),var(--SECONDGRCOLOR));
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    padding: 0.5rem;
+}
+
+.column-label p{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--TXTCOLOR);
+    text-align: center;
+}
+/* PROGRES COLUMNS - CLOSE */
+
+/* CARD - OPEN */
+
+
+
+
+.card{
+    width: 200px;
+    height: 300px;
+    background-color: var(--MODALBORDERCOLOR);
+    border-radius: 2rem;
+    padding: 1.4rem;
+    margin-top: 2rem;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-content: center;
+}
+
+.card-header h3{
+    margin: auto 0;
+    padding: 1rem;
+}
+
+.card-header img{
+    height: 50px;
+    width: auto;
+}
+/* CARD - CLOSE */
