@@ -83,7 +83,7 @@ ul{
 
 /* MODALS -OPEN*/
 .modal{
-   
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -98,7 +98,7 @@ ul{
 }
 
 .add-member{
-    display: none;
+   display: none;
 }
 
 .background{
@@ -178,7 +178,7 @@ form button{
 }
 
 .error-message{
-    display: none;
+   
 }
 /* ERROR HANDELERS -CLOSE*/
 
