@@ -88,5 +88,47 @@
             
             </div>
         </aside>
+    </main>
+
+    <div class="modal add-member">
+        <div class="modal background">
+            <section class="input-box ">
+                <h2>Add New Member</h2>
+                <form>
+                    <input type="text" id="id" name="id" placeholder="Name/Id/E-mail">
+
+                    <div class="error-message-container">
+                        <p class="error-message">❗Fields can't be empty❗</p>
+                    </div>
+
+                    <button class="create-button">Add</button>
+                    <button class="cancel-button">Cancel</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal new-project">
+        <div class="modal background">
+            <section class="input-box">
+                <h2>Create New Project</h2>
+                <form>
+                    <input type="text" id="project-name" name="project-name" placeholder="Project Name">
+                    <input type="date" id="start-date" name="start-date" placeholder="Start Date">
+                    <input type="date" id="end-date" name="end-date" placeholder="End Date">
+                    <input type="text" id="url-github" name="url-github" placeholder="GitHub url">
+
+                    <div class="error-message-container">
+                        <p class="error-message">❗Fields can't be empty❗</p>
+                    </div>
+                    
+                    <button class="create-button">Create</button>
+                    <button class="cancel-button">Cancel</button>
+
+                </form>
+            </section>
+        </div>
+    </div>
+
 </body>
 </html>

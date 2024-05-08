@@ -83,7 +83,7 @@ ul{
 
 /* MODALS -OPEN*/
 .modal{
-    display: none;
+   
     position: fixed;
     top: 0;
     left: 0;
@@ -91,6 +91,14 @@ ul{
     z-index: 1;
     width: 100%;
     height: 100%;
+}
+
+.new-project{
+    
+}
+
+.add-member{
+    display: none;
 }
 
 .background{
@@ -201,7 +209,7 @@ li:last-child a{
     background-color: transparent;
 }
 
-.sidebar-button a:hover, .a-tag-button:hover{
+.button-dropdown:hover, .a-tag-button:hover{
     background-color: var(--DROPDOWNHIGHLIGHTCOLOR);
 }
 
