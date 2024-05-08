@@ -184,7 +184,7 @@ form input:hover ,form button:hover, a:hover,.search-btn:hover{
     background-color:var(--HIGHLIGHTCOLOR) ;
 }
 
-.orgainsaiton-select-dropdown a:hover ,.sidebar-button:hover{
+.dropdown-list-content a:hover ,.sidebar-button:hover{
     background-color: var(--DROPDOWNHIGHLIGHTCOLOR);
 }
 
@@ -201,7 +201,7 @@ li:last-child a{
     background-color: transparent;
 }
 
-.sidebar-button a:hover{
+.sidebar-button a:hover, .a-tag-button:hover{
     background-color: var(--DROPDOWNHIGHLIGHTCOLOR);
 }
 
@@ -311,67 +311,62 @@ aside{
 
 .sidebar-controls{
     width: 100%;
-    margin-top: 7rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    display: grid;
+    place-content: center;
 }
 
-.sidebar-button,.orgainsaiton-select-dropdown {
-    background-color: var(--BACKCOLOR);
-    color: black;
-    width: 80%;
+.sidebar-dropdown-list
+{
+    width: 100%;
     text-align: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.sidebar-button, .a-tag-button {
+    color: black;
+    background-color: var(--BACKCOLOR);
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.75rem;
+    margin-top: 2rem;
     border-radius: 2rem;
     border: 2px solid black;
-    font-size: 1.5rem;    
 }
 
-.a-tag{
-    padding: 0;
+.dropdown-list-content{
+    display: none;
+    background-color: var(--BACKCOLOR);
+    border-radius: 2rem;
+    border: 2px solid black;
+    position: absolute;
+    z-index: 999;
 }
 
-.sidebar-button{
-    margin-top: 2rem;
-}
-
-
-
-aside ul li a, aside button{
+.dropdown-list-content a{
     color: black;
-    padding: 1rem;
-}
-
-aside ul li a{
+    padding: 0.70rem;
     border-bottom: 1px solid black;
 }
 
-.organisaton-select{
+
+.sidebar-button{
     width: 100%;
 }
 
-.orgainsaiton-select-dropdown
-{
-   position: fixed;
-   width:286.72px
+.a-tag-button{
+    background-color: var(--BACKCOLOR);
 }
 
-.organisation-dropdown{
-    display: none;
+.dropdown-list-content{
+    width: 100%;
 }
 
-.project-dropdown{
-    display: none;
-    position: fixed;
-    bottom: 295px;
+.dropdown-list{
+    width: 100%;
 }
 
-.sidebar-button a{
-    color: black;
-    border-radius: 2rem;
-    padding: 1rem;
-}
 /* SIDE BAR -CLOSE*/
 
 .login-header
