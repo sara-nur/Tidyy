@@ -324,7 +324,7 @@ aside{
     position: relative;
 }
 
-.sidebar-button, .a-tag-button {
+.button-dropdown, .a-tag-button {
     color: black;
     background-color: var(--BACKCOLOR);
     font-size: 2rem;
@@ -351,7 +351,7 @@ aside{
 }
 
 
-.sidebar-button{
+.button-dropdown{
     width: 100%;
 }
 
