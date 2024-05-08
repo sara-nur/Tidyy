@@ -178,7 +178,7 @@ form button{
 }
 
 .error-message{
-   
+   display: none;
 }
 /* ERROR HANDELERS -CLOSE*/
 
@@ -332,7 +332,7 @@ aside{
     position: relative;
 }
 
-.button-dropdown, .a-tag-button {
+.button-dropdown, .a-tag-button,.create-org-button {
     color: black;
     background-color: var(--BACKCOLOR);
     font-size: 2rem;
