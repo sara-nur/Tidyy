@@ -26,14 +26,14 @@
             <h2>Log in to continue</h2>
             <form>
                 
-                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                <input type="text" id="username" name="username" placeholder="Username" required>
                
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
 
                 <button type="submit"><a href="home-screen.html">Log In</a></button>
-                <button type="button">Register</button>
+                <button type="button" id="createButton" >Register</button>
 
-                <div class="error-message-container">
+                <div class="error-message-container" id="errorLogin">
                     <p class="error-message">❗Incorrect username or password❗</p>
                 </div>
 
@@ -42,24 +42,24 @@
     </main>
 
 <!--MODAL-->
-<div class="modal">
+<div class="modal"  id="createModal">
     <div class="modal background">
 
         <section class="input-box register">
-            <h2>Make a new accaount</h2>
+            <h2>Make a new account</h2>
             <form>
-                <input type="text" id="username" name="username" placeholder="Enter Username" required>
+                <input type="text" id="username" name="username" placeholder="Username" >
                 
-                <input type="text" id="emali" name="emali" placeholder="Enter Emali" required>
+                <input type="text" id="emali" name="emali" placeholder="Emali" >
         
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
+                <input type="password" id="password" name="password" placeholder="Password" >
         
-                <input type="password" id="password-repeat" name="password-repeat" placeholder="Renter Password" required>
+                <input type="password" id="password-repeat" name="password-repeat" placeholder="Reenter Password" >
         
-                <button type="submit">Register</button>
-                <button type="reset">Reset</button>
+                <button type="submit" id="RegisterModalbtn">Register</button>
+                <button type="Cancel" id="CancelBtn">Cancel</button>
         
-                <div class="error-message-container">
+                <div class="error-message-container" id="errorRegister">
                     <p class="error-message">❗Fields can't be empty❗</p>
                 </div>
             </form>
@@ -69,4 +69,5 @@
     
 <!--MODAL-->
 </body>
+<script src="../JS/modal.js"></script>
 </html>
