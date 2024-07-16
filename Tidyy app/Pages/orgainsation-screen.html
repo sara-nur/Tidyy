@@ -16,11 +16,12 @@
           <img src="../Img/search.png" alt="" />
         </button>
       </span>
-      <figure>
+      <div></div>
+      <figure id="profileOptions">
         <img class="header-profile-picture" src="../Img/man.png" alt="" />
         <p>John Doe</p>
       </figure>
-      <section class="profile-options-dropdown">
+      <section class="profile-options-dropdown" id="proflieDropDown">
         <ul>
           <li><a href="index.html">Logout</a></li>
         </ul>
@@ -38,8 +39,8 @@
             <p><a href="#">Projects</a></p>
           </div>
           <div class="banner-buttons organisation">
-            <button>
-              <p>Add Member</p>
+            <button id="Member">
+              Add Member
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.2rem"
@@ -57,8 +58,8 @@
                 </g>
               </svg>
             </button>
-            <button>
-              <p>New Project</p>
+            <button id="createButton">
+              New Project
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.2rem"
@@ -80,8 +81,10 @@
       <aside class="sidebar-orgainsation-overview">
         <div class="sidebar-controls">
           <div class="sidebar-dropdown-list">
-            <button class="button-dropdown sidebar">Test Orgainsation ⌵</button>
-            <ul class="dropdown-list-content">
+            <button class="button-dropdown sidebar" id="firstddl">
+              Test Orgainsation ⌵
+            </button>
+            <ul class="dropdown-list-content" id="firstContentddl">
               <li>
                 <a href="orgainsation-screen.html">Test Orgainsation</a>
               </li>
@@ -95,8 +98,10 @@
           </div>
 
           <div class="sidebar-dropdown-list">
-            <button class="button-dropdown sidebar">Select Project ⌵</button>
-            <ul class="dropdown-list-content">
+            <button class="button-dropdown sidebar" id="Secondddl">
+              Select Project ⌵
+            </button>
+            <ul class="dropdown-list-content" id="SecondContentddl">
               <li>
                 <a href="projects-screen.html">Test Project</a>
               </li>
@@ -115,25 +120,31 @@
       </aside>
     </main>
 
-    <div class="modal add-member">
+    <div class="modal add-member" id="memberMod">
       <div class="modal background">
         <section class="input-box">
           <h2>Add New Member</h2>
           <form>
-            <input type="text" id="id" name="id" placeholder="Name/Id/E-mail" />
+            <input
+              type="text"
+              id="id"
+              name="id"
+              placeholder="Name/Id/E-mail"
+              required
+            />
 
             <div class="error-message-container">
               <p class="error-message">❗Fields can't be empty❗</p>
             </div>
 
             <button class="create-button">Add</button>
-            <button class="cancel-button">Cancel</button>
+            <button class="cancel-button" id="CancelBtn">Cancel</button>
           </form>
         </section>
       </div>
     </div>
 
-    <div class="modal new-project">
+    <div class="modal new-project" id="createModal">
       <div class="modal background">
         <section class="input-box">
           <h2>Create New Project</h2>
@@ -167,11 +178,14 @@
               <p class="error-message">❗Fields can't be empty❗</p>
             </div>
 
-            <button class="create-button">Create</button>
-            <button class="cancel-button">Cancel</button>
+            <button type="submit" class="create-button">Create</button>
+            <button type="cancel" class="cancel-button" id="CancelBtn">
+              Cancel
+            </button>
           </form>
         </section>
       </div>
     </div>
   </body>
+  <script src="../JS/modal.js"></script>
 </html>

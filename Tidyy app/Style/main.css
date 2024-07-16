@@ -38,6 +38,10 @@ ul {
   list-style: none;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 /*RESET -CLOSE*/
 
 /* BACKGROUND IMAGES FOR LOGIN PAGE -OPEN*/
