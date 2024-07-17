@@ -32,14 +32,15 @@
         <div class="overview-banner organisation">
           <div class="banner-information organisation">
             <figure>
-              <img src="../Img/briefcase.png" alt="" />
-              <h2>Test Organisation</h2>
+              <h2>Project #1</h2>
+              <h2>/</h2>
+              <h2>Task #1</h2>
             </figure>
-            <p><a href="#">Projects</a></p>
+            <p><a href="#">Test Organization</a></p>
           </div>
           <div class="banner-buttons organisation">
-            <button>
-              New Task
+            <button id="createButton">
+              New Subtask
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1rem"
@@ -54,6 +55,8 @@
                 />
               </svg>
             </button>
+            <button>All Subtasks</button>
+            <button>My Subtasks</button>
           </div>
         </div>
         <div class="card-layout">
@@ -63,25 +66,7 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <h3>Task #1</h3>
-                <img src="../Img/virus.png" alt="" />
-              </div>
-              <p>Priority</p>
-              <p>Progress</p>
-              <p>Asignee</p>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <h3>Task #1</h3>
-                <img src="../Img/virus.png" alt="" />
-              </div>
-              <p>Priority</p>
-              <p>Progress</p>
-              <p>Asignee</p>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <h3>Task #1</h3>
+                <h3>Subtask #1</h3>
                 <img src="../Img/virus.png" alt="" />
               </div>
               <p>Priority</p>
@@ -96,7 +81,7 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <h3>Task #2</h3>
+                <h3>Subtask #5</h3>
                 <img src="../Img/virus.png" alt="" />
               </div>
               <p>Priority</p>
@@ -110,7 +95,7 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <h3>Task #1</h3>
+                <h3>Subtask #2</h3>
                 <img src="../Img/virus.png" alt="" />
               </div>
               <p>Priority</p>
@@ -124,7 +109,7 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <h3>Task #3</h3>
+                <h3>Subtask #3</h3>
                 <img src="../Img/virus.png" alt="" />
               </div>
               <p>Priority</p>
@@ -176,6 +161,59 @@
         </div>
       </aside>
     </main>
+
+    <div class="modal new-task" id="createModal">
+      <div class="modal background">
+        <section class="input-box">
+          <h2>Create New Subtask</h2>
+          <form>
+            <input
+              type="text"
+              id="task-name"
+              name="task-name"
+              placeholder="Task Name"
+            />
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              placeholder="Start Date"
+            />
+            <input
+              type="date"
+              id="end-date"
+              name="end-date"
+              placeholder="End Date"
+            />
+
+            <div class="modal-dropdown-list">
+              <p class="p-dropdown-modal" id="modalddl">Type⌵</p>
+              <ul class="modal-dropdown-list-content" id="modalcontentddl">
+                <li>Dev</li>
+                <li>UI</li>
+              </ul>
+            </div>
+
+            <div class="modal-dropdown-list">
+              <p class="p-dropdown-modal" id="modalddl2">Team⌵</p>
+              <ul class="modal-dropdown-list-content" id="modalcontentddl2">
+                <li>Team #1</li>
+                <li>Team #2</li>
+              </ul>
+            </div>
+
+            <div class="error-message-container">
+              <p class="error-message">❗Fields can't be empty❗</p>
+            </div>
+
+            <button type="submit" class="create-button">Create</button>
+            <button type="cancel" class="cancel-button" id="CancelBtn">
+              Cancel
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
   </body>
   <script src="../JS/modal.js"></script>
 </html>

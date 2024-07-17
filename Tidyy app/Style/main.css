@@ -1,8 +1,10 @@
 /* VARIABLES -OPEN*/
 :root {
   --TXTCOLOR: whitesmoke;
-  --FIRSTGRCOLOR: #17455c;
-  --SECONDGRCOLOR: #03334b;
+  --FIRSTGRCOLOR: #143444;
+  --SECONDGRCOLOR: #012537;
+  --BANNERCOLORFIRST: #417894;
+  --BANNERCOLORSECOND: #537f96;
   --BACKCOLORFRONTPAGE: papayawhip;
   --HIGHLIGHTCOLOR: #0e3f57; /* HOVER COLOR */
   --BACKCOLOR: #f5f5f5;
@@ -327,7 +329,7 @@ main {
 /* SIDE BAR -OPEN*/
 
 aside {
-  background-image: linear-gradient(var(--SECONDGRCOLOR), var(--FIRSTGRCOLOR));
+  background: linear-gradient(var(--SECONDGRCOLOR), var(--FIRSTGRCOLOR));
   filter: drop-shadow(0px -3px 5px rgba(103, 97, 97, 0.5));
   width: 17%;
   z-index: 1;
@@ -418,7 +420,10 @@ aside {
 .overview-banner {
   display: flex;
   justify-content: space-between;
-  background-color: var(--MODALBORDERCOLOR);
+  background: linear-gradient(
+    var(--BANNERCOLORFIRST),
+    var(--BANNERCOLORSECOND)
+  );
   margin-top: 2rem;
   height: 4.5rem;
   align-items: center;
@@ -510,10 +515,16 @@ aside {
   border-radius: 0.4rem;
   height: fit-content;
   background-color: var(--MODALBORDERCOLOR);
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
 }
 
 .column-label {
   width: 100%;
+  flex-shrink: 0;
+  min-width: 100%;
+  background-color: red;
   background-image: linear-gradient(var(--FIRSTGRCOLOR), var(--SECONDGRCOLOR));
   border-radius: 0.4rem 0.4rem 0.2rem 0.2rem;
   font-size: 1rem;
