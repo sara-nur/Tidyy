@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tidyy</title>
-    <link rel="icon" href="../Img/cleaning.png">
-    <link rel="stylesheet" href="../Style/main.css">
-</head>
-<body>
+    <link rel="icon" href="../Img/cleaning.png" />
+    <link rel="stylesheet" href="../Style/main.css" />
+  </head>
+  <body>
     <header class="search-header">
-        <h1>Tidyy</h1>
-        <span>
-            <input type="search" placeholder="Search">
-                <button class="search-btn">
-                    <img src="../Img/search.png" alt="">
-                </button>
-        </span>
-        <figure id="profileOptions">
-            <img class="header-profile-picture" src="../Img/man.png" alt="">
-            <p>John Doe</p>
-        </figure>
-        <section class="profile-options-dropdown" id="proflieDropDown">
-            <ul>
-                <li><a href="index.html">Logout</a></li>
-            </ul>
-        </section>
+      <h1>Tidyy</h1>
+      <span>
+        <input type="search" placeholder="Search" />
+        <button class="search-btn">
+          <img src="../Img/search.png" alt="" />
+        </button>
+      </span>
+      <figure id="profileOptions">
+        <img class="header-profile-picture" src="../Img/man.png" alt="" />
+        <p>John Doe</p>
+      </figure>
+      <section class="profile-options-dropdown" id="proflieDropDown">
+        <ul>
+          <li><a href="index.html">Logout</a></li>
+        </ul>
+      </section>
     </header>
-    
+
     <main>
 
         <section class="main-content">
@@ -54,49 +54,46 @@
             
         </section>
 
-        <aside class="sidebar-orgainsation-overview">
-            <div class="sidebar-controls">
-                <div class="sidebar-dropdown-list">
-                    <button class="button-dropdown sidebar" id="firstddl">
-                        Test Orgainsation ⌵
-                    </button>
-                    <ul class="dropdown-list-content" id="firstContentddl">
-                        <li>
-                            <a href="orgainsation-screen.html">Test Orgainsation</a>
-                        </li>
-                        <li>
-                            <a href="">Sara's Orgainsation</a>
-                        </li>
-                        <li>
-                            <a href="">Admir's Orgainsation</a>
-                        </li>
-                    </ul>
-                </div>
+      <aside class="sidebar-orgainsation-overview">
+        <div class="sidebar-controls">
+          <div class="sidebar-dropdown-list">
+            <button class="button-dropdown sidebar" id="firstddl">
+              Test Orgainsation ⌵
+            </button>
+            <ul class="dropdown-list-content" id="firstContentddl">
+              <li>
+                <a href="orgainsation-screen.html">Test Orgainsation</a>
+              </li>
+              <li>
+                <a href="">Sara's Orgainsation</a>
+              </li>
+              <li>
+                <a href="">Admir's Orgainsation</a>
+              </li>
+            </ul>
+          </div>
 
-                <div class="sidebar-dropdown-list">
-                    <button class="button-dropdown sidebar" id="Secondddl">
-                        Select Project ⌵
-                    </button>
-                    <ul class="dropdown-list-content" id="SecondContentddl">
-                        <li>
-                            <a href="projects-screen.html">Test Project</a>
-                        </li>
-                        <li>
-                            <a href="">Sara's Project</a>
-                        </li>
-                        <li>
-                            <a href="">Admir's Project</a>
-                        </li>
-                    </ul>
+          <div class="sidebar-dropdown-list">
+            <button class="button-dropdown sidebar" id="Secondddl">
+              Select Project ⌵
+            </button>
+            <ul class="dropdown-list-content" id="SecondContentddl">
+              <li>
+                <a href="projects-screen.html">Test Project</a>
+              </li>
+              <li>
+                <a href="">Sara's Project</a>
+              </li>
+              <li>
+                <a href="">Admir's Project</a>
+              </li>
+            </ul>
+          </div>
 
-                </div>
-
-            
-            <a class="a-tag-button" href="">Calendar</a>
-            <a class="a-tag-button" href="teams-screen.html">Teams</a>
-            
-            </div>
-        </aside>
+          <a class="a-tag-button" href="">Calendar</a>
+          <a class="a-tag-button" href="teams-screen.html">Teams</a>
+        </div>
+      </aside>
     </main>
 
     <div class="modal add-member" id="memberMod">
@@ -106,38 +103,56 @@
                 <form>
                     <input type="text" id="id" name="id" placeholder="Name/Id/E-mail" >
 
-                    <div class="error-message-container">
-                        <p class="error-message">❗Fields can't be empty❗</p>
-                    </div>
+            <div class="error-message-container">
+              <p class="error-message">❗Fields can't be empty❗</p>
+            </div>
 
-                    <button class="create-button">Add</button>
-                    <button class="cancel-button" id="CancelBtn">Cancel</button>
-                </form>
-            </section>
-        </div>
+            <button class="create-button">Add</button>
+            <button class="cancel-button" id="CancelBtn">Cancel</button>
+          </form>
+        </section>
+      </div>
     </div>
 
-    <div class="modal new-task"  id="createModal">
-        <div class="modal background">
-            <section class="input-box">
-                <h2>Create New Task</h2>
-                <form>
-                    <input type="text" id="project-name" name="task-name" placeholder="Task Name" required>
-                    <input type="date" id="start-date" name="start-date" placeholder="Start Date" required>
-                    <input type="date" id="end-date" name="end-date" placeholder="End Date" required>
+    <div class="modal new-task" id="createModal">
+      <div class="modal background">
+        <section class="input-box">
+          <h2>Create New Task</h2>
+          <form>
+            <input
+              type="text"
+              id="project-name"
+              name="task-name"
+              placeholder="Task Name"
+              required
+            />
+            <input
+              type="date"
+              id="start-date"
+              name="start-date"
+              placeholder="Start Date"
+              required
+            />
+            <input
+              type="date"
+              id="end-date"
+              name="end-date"
+              placeholder="End Date"
+              required
+            />
 
-                    <div class="error-message-container">
-                        <p class="error-message">❗Fields can't be empty❗</p>
-                    </div>
-                    
-                    <button type="submit" class="create-button">Create</button>
-                    <button type="cancel" class="cancel-button" id="CancelBtn">Cancel</button>
+            <div class="error-message-container">
+              <p class="error-message">❗Fields can't be empty❗</p>
+            </div>
 
-                </form>
-            </section>
-        </div>
+            <button type="submit" class="create-button">Create</button>
+            <button type="cancel" class="cancel-button" id="CancelBtn">
+              Cancel
+            </button>
+          </form>
+        </section>
+      </div>
     </div>
-
-</body>
-<script src="../JS/modal.js"></script>
+  </body>
+  <script src="../JS/modal.js"></script>
 </html>
