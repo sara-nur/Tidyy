@@ -40,7 +40,7 @@
                   viewBox="0 0 24 24"
                 >
                   <path
-                    fill="white"
+                    fill="whitesmoke"
                     d="M13 9h5.5L13 3.5zM6 2h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4c0-1.11.89-2 2-2m.12 13.5l3.74 3.74l1.42-1.41l-2.33-2.33l2.33-2.33l-1.42-1.41zm11.16 0l-3.74-3.74l-1.42 1.41l2.33 2.33l-2.33 2.33l1.42 1.41z"
                   /></svg
                 >Project #1
@@ -65,6 +65,8 @@
                 />
               </svg>
             </button>
+            <button id="createButton">All Tasks</button>
+            <button id="createButton">My Tasks</button>
           </div>
         </div>
         <div class="card-layout">
@@ -237,32 +239,20 @@
             />
 
             <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="modalddl"> 
-                  Type⌵
-              </p> 
+              <p class="p-dropdown-modal" id="modalddl">Type⌵</p>
               <ul class="modal-dropdown-list-content" id="modalcontentddl">
-                  <li>
-                      Dev
-                  </li>
-                  <li>
-                      UI
-                  </li>
+                <li>Dev</li>
+                <li>UI</li>
               </ul>
-          </div>
+            </div>
 
-          <div class="modal-dropdown-list">
-            <p class="p-dropdown-modal" id="modalddl2"> 
-                Team⌵
-            </p> 
-            <ul class="modal-dropdown-list-content" id="modalcontentddl2">
-                <li>
-                    Team #1
-                </li>
-                <li>
-                    Team #2
-                </li>
-            </ul>
-        </div>
+            <div class="modal-dropdown-list">
+              <p class="p-dropdown-modal" id="modalddl2">Team⌵</p>
+              <ul class="modal-dropdown-list-content" id="modalcontentddl2">
+                <li>Team #1</li>
+                <li>Team #2</li>
+              </ul>
+            </div>
 
             <div class="error-message-container">
               <p class="error-message">❗Fields can't be empty❗</p>
