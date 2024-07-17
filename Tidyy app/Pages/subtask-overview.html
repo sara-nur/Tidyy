@@ -28,31 +28,29 @@
     </header>
 
     <main>
+      <section class="main-content">
+        <div class="overview-banner organisation">
+          <div class="banner-information organisation">
+            <figure>
+              <img src="../Img/briefcase.png" alt="" />
+              <h2>Subtask #1</h2>
+            </figure>
+            <p>
+              <a href="">Test organistaion #1</a>/ <a href="">Project #1</a>/
+              <a href="">Task #1</a>
+            </p>
+          </div>
+          <div class="banner-buttons organisation">
+            <button id="EditBtn">Edit</button>
+            <button id="FinishBtn">Finish</button>
+          </div>
+        </div>
 
-        <section class="main-content">
-            <div class="overview-banner organisation">
-                <div class="banner-information organisation">
-                    <figure>
-                        <img src="../Img/briefcase.png" alt="">
-                        <h2>Subtask #1</h2>
-                    </figure>
-                    <p><a href="">Test organistaion #1</a>/
-                        <a href="">Project #1</a>/
-                        <a href="">Task #1</a>
-                    </p>
-                </div>
-                <div class="banner-buttons organisation">
-                    <button id="EditBtn">Edit</button>
-                    <button id="FinishBtn">Finish</button>
-                </div>
-            </div>
-            
-            <div class="subtask-overview">
-                <p>Subtask title </p>
-                <textarea></textarea>
-            </div>
-            
-        </section>
+        <div class="subtask-overview">
+          <p>Subtask title</p>
+          <textarea></textarea>
+        </div>
+      </section>
 
       <aside class="sidebar-orgainsation-overview">
         <div class="sidebar-controls">
@@ -97,11 +95,11 @@
     </main>
 
     <div class="modal add-member" id="memberMod">
-        <div class="modal background">
-            <section class="input-box ">
-                <h2>Add New Member</h2>
-                <form>
-                    <input type="text" id="id" name="id" placeholder="Name/Id/E-mail" >
+      <div class="modal background">
+        <section class="input-box">
+          <h2>Add New Member</h2>
+          <form>
+            <input type="text" id="id" name="id" placeholder="Name/Id/E-mail" />
 
             <div class="error-message-container">
               <p class="error-message">❗Fields can't be empty❗</p>
