@@ -71,3 +71,17 @@ if(cancelButton != null)
     memberModal.style.display = "none";
  });
 
+
+
+const modalddbtn = document.getElementById("modalddl");
+const modalddcontent = document.getElementById("modalcontentddl");
+
+
+if(modalddbtn != null)
+    modalddbtn.addEventListener("click",()=>{
+        
+        if(modalddcontent.style.display =="block")
+            modalddcontent.style.display="none";
+        else if(modalddcontent.style.display="none")
+            modalddcontent.style.display="block";
+    });
