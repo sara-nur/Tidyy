@@ -33,13 +33,17 @@
                 <div class="banner-information organisation">
                     <figure>
                         <img src="../Img/briefcase.png" alt="">
-                        <h2>Teams</h2>
+                        <h2>Team #1</h2>
                     </figure>
                 </div>
                 <div class="banner-buttons organisation">
                     <button id="createButton">New team +</button>
+                    <button id="Member">Add Member</button>
                 </div>
             </div>  
+            <div class="team-counter">
+                <p>Number of Teams : 2</p>
+            </div>
             <div class="team-layout">
                 <div class="team-card">
                     <figure></figure>
@@ -103,11 +107,23 @@
     <div class="modal new-task"  id="createModal">
         <div class="modal background">
             <section class="input-box">
-                <h2>Create New Task</h2>
+                <h2>Create new team</h2>
                 <form>
-                    <input type="text" id="project-name" name="task-name" placeholder="Task Name" required>
-                    <input type="date" id="start-date" name="start-date" placeholder="Start Date" required>
-                    <input type="date" id="end-date" name="end-date" placeholder="End Date" required>
+                    <input type="text" id="team-name" name="team-name" placeholder="Team Name" >
+                    <div class="modal-dropdown-list">
+                        <button class="button-dropdown modal" id="firstddl">
+                            Type ⌵
+                        </button>
+                        <ul class="modal-dropdown-list-content" id="firstContentddl">
+                            <li>
+                                Dev
+                            </li>
+                            <li>
+                                UI
+                            </li>
+                        </ul>
+                    </div>
+                    
 
                     <div class="error-message-container">
                         <p class="error-message">❗Fields can't be empty❗</p>
@@ -120,6 +136,25 @@
             </section>
         </div>
     </div>
+
+    <div class="modal add-member" id="memberMod">
+        <div class="modal background">
+            <section class="input-box ">
+                <h2>Add New Member</h2>
+                <form>
+                    <input type="text" id="id" name="id" placeholder="Name/Id/E-mail">
+
+                    <div class="error-message-container">
+                        <p class="error-message">❗Fields can't be empty❗</p>
+                    </div>
+
+                    <button class="create-button">Add</button>
+                    <button class="cancel-button" id="CancelBtn">Cancel</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
 
 </body>
 <script src="../JS/modal.js"></script>
