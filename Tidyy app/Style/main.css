@@ -42,6 +42,10 @@ button:hover {
   cursor: pointer;
 }
 
+.p-dropdown-modal:hover{
+  cursor: pointer;
+}
+
 /*RESET -CLOSE*/
 
 /* BACKGROUND IMAGES FOR LOGIN PAGE -OPEN*/
@@ -533,3 +537,62 @@ aside {
   width: auto;
 }
 /* CARD - CLOSE */
+
+/* TEAM BANNER - OPEN */
+
+.team-card{
+  height: 50px;
+  width: 50%;
+  background-color: red;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.team-card p{
+  padding-left: 10px;
+}
+
+.team-layout{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+.team-counter{
+  height: 50px;
+  width: 15%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 50px;
+  float: right;
+}
+
+.team-card,.team-counter{
+  border-radius: 1rem;
+  background-color: var(--FIRSTGRCOLOR);
+}
+
+.p-dropdown-modal{
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px white solid;
+  font-size: 1.5rem;
+  padding: 0.45rem;
+}
+
+.modal-dropdown-list-content{
+  font-size: 1.5rem;
+  display: none;
+}
+
+.modal-dropdown-list-content li{
+  padding: 0.45rem;
+  border-bottom: 1px white solid;
+}
+
+/* TEAM BANNER - CLOSE */
