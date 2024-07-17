@@ -37,19 +37,24 @@
                     </figure>
                 </div>
                 <div class="banner-buttons organisation">
-                    
+                    <button id="createButton">New team +</button>
                     <button id="Member">Add Team Member</button>
                 </div>
             </div>  
-            <div class="team-counter">
-                <p>Number of Members : 2</p>
+            <div class="team-info">
+                <div class="team-counter">
+                    <p>Number of Teams : 2</p>
+                </div>
+                <div class="team-counter">
+                    <p>Number of Members : 5</p>
+                </div>
             </div>
             <div class="team-layout">
-                <div class="team-card">
+                <div class="team-card" id="teamBtn">
                     <figure></figure>
                     <p>Dev team</p>
                 </div>
-                <div class="team-card">
+                <div class="team-card" id="teamBtn" onclick="moveToOverview()">
                     <figure></figure>
                     <p>Ui team</p>
                 </div>
@@ -104,6 +109,52 @@
     </main>
 
 
+    <div class="modal new-task"  id="createModal">
+        <div class="modal background">
+            <section class="input-box">
+                <h2>Create new team</h2>
+                <form>
+                    <input type="text" id="team-name" name="team-name" placeholder="Team Name" >
+                    <div class="modal-dropdown-list">
+                        <p class="p-dropdown-modal" id="modalddl"> 
+                            Type⌵
+                        </p> 
+                        <ul class="modal-dropdown-list-content" id="modalcontentddl">
+                            <li>
+                                Dev
+                            </li>
+                            <li>
+                                UI
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="modal-dropdown-list">
+                        <p class="p-dropdown-modal" id="modalddl2"> 
+                            Members⌵
+                        </p> 
+                        <ul class="modal-dropdown-list-content" id="modalcontentddl2">
+                            <li>
+                                Sara
+                            </li>
+                            <li>
+                                Admir
+                            </li>
+                        </ul>
+                    </div>
+                    
+
+                    <div class="error-message-container">
+                        <p class="error-message">❗Fields can't be empty❗</p>
+                    </div>
+                    
+                    <button type="submit" class="create-button">Create</button>
+                    <button type="cancel" class="cancel-button" id="CancelBtn">Cancel</button>
+
+                </form>
+            </section>
+        </div>
+    </div>
 
 
     <div class="modal add-member" id="memberMod">
@@ -112,7 +163,19 @@
                 <h2>Add New Member</h2>
                 <form>
                     <input type="text" id="id" name="id" placeholder="Name/Id/E-mail">
-
+                    <div class="modal-dropdown-list">
+                        <p class="p-dropdown-modal" id="modalddl3"> 
+                            Team Name ⌵
+                        </p> 
+                        <ul class="modal-dropdown-list-content" id="modalcontentddl3">
+                            <li>
+                                Team #1
+                            </li>
+                            <li>
+                                Team #2
+                            </li>
+                        </ul>
+                    </div>
                     <div class="error-message-container">
                         <p class="error-message">❗Fields can't be empty❗</p>
                     </div>

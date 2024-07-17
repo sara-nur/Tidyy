@@ -70,12 +70,19 @@
               placeholder="Organisation Name..."
             />
             <input type="text" id="owner" name="owner" placeholder="Owner..." />
-            <input
-              type="text"
-              id="select-members"
-              name="select-members"
-              placeholder="Select Members"
-            />
+            <div class="modal-dropdown-list">
+              <p class="p-dropdown-modal" id="modalddl"> 
+                  Members⌵
+              </p> 
+              <ul class="modal-dropdown-list-content" id="modalcontentddl">
+                  <li>
+                      Admir
+                  </li>
+                  <li>
+                      Sara
+                  </li>
+              </ul>
+          </div>
             <div class="error-message-container">
               <p class="error-message">❗Fields can't be empty❗</p>
             </div>
