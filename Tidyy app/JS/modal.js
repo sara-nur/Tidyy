@@ -85,3 +85,46 @@ if(modalddbtn != null)
         else if(modalddcontent.style.display="none")
             modalddcontent.style.display="block";
     });
+
+
+const modalddbtn2 = document.getElementById("modalddl2");
+const modalddcontent2 = document.getElementById("modalcontentddl2");
+    
+    
+    if(modalddbtn2 != null)
+        modalddbtn2.addEventListener("click",()=>{
+            
+            if(modalddcontent2.style.display =="block")
+                modalddcontent2.style.display="none";
+            else if(modalddcontent2.style.display="none")
+                modalddcontent2.style.display="block";
+        });
+
+
+        const modalddbtn3 = document.getElementById("modalddl3");
+        const modalddcontent3 = document.getElementById("modalcontentddl3");
+            
+            
+            if(modalddbtn3 != null)
+                modalddbtn3.addEventListener("click",()=>{
+                    
+                    if(modalddcontent3.style.display =="block")
+                        modalddcontent3.style.display="none";
+                    else if(modalddcontent3.style.display="none")
+                        modalddcontent3.style.display="block";
+                });
+
+
+const teamBtn = document.getElementById("teamBtn");
+
+if(teamBtn != null)
+    teamBtn.addEventListener("click",()=>{
+        window.location.href = "team-overview.html";
+})
+
+function moveToOverview (){
+    window.location.href = "team-overview.html";
+}
+
+
+

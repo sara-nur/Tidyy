@@ -566,18 +566,25 @@ aside {
 .team-counter {
   height: 50px;
   width: 15%;
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px 50px;
-  float: right;
+  margin: 20px 0 0 180px;
 }
 
-.team-card,
-.team-counter {
+.team-card {
   border-radius: 1rem;
   background-color: var(--FIRSTGRCOLOR);
+}
+
+.team-counter p {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.team-counter p {
+  color: black;
+  font-size: 1.2rem;
 }
 
 .p-dropdown-modal {
@@ -585,12 +592,17 @@ aside {
   margin: 0;
   border-bottom: 1px white solid;
   font-size: 1.5rem;
-  padding: 0.45rem;
+  padding: 0.6rem;
 }
 
 .modal-dropdown-list-content {
   font-size: 1rem;
   display: none;
+  position: absolute;
+  z-index: 999;
+  background-color: var(--FIRSTGRCOLOR);
+  width: 80%;
+  border: 1px white solid;
 }
 
 .modal-dropdown-list-content li {
@@ -598,4 +610,8 @@ aside {
   border-bottom: 1px white solid;
 }
 
+.team-info {
+  display: flex;
+  flex-direction: column;
+}
 /* TEAM BANNER - CLOSE */
