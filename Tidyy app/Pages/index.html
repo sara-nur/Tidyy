@@ -24,18 +24,20 @@
 
         <section class="input-box login">
             <h2>Log in to continue</h2>
-            <form>
+            <form id="login-form">
                 
                 <input type="text" id="username" name="username" placeholder="Username" >
                
                 <input type="password" id="password" name="password" placeholder="Password" >
 
-                <button type="submit"><a href="home-screen.html">Log In</a></button>
+                <div class="error-message-container" >
+                    <p class="error-message" id="error">❗Incorrect username or password❗</p>
+                </div>
+
+                <button type="submit" id="loginbtn">Log In</button>
                 <button type="button" id="createButton" >Register</button>
 
-                <div class="error-message-container" id="errorLogin">
-                    <p class="error-message">❗Incorrect username or password❗</p>
-                </div>
+                
 
             </form>
         </section>
@@ -48,11 +50,11 @@
         <section class="input-box register">
             <h2>Make a new account</h2>
             <form>
-                <input type="text" id="username" name="username" placeholder="Username" >
+                <input type="text" id="usernameRegister" name="username" placeholder="Username" >
                 
                 <input type="text" id="emali" name="emali" placeholder="Emali" >
         
-                <input type="password" id="password" name="password" placeholder="Password" >
+                <input type="password" id="passwordRegister" name="password" placeholder="Password" >
         
                 <input type="password" id="password-repeat" name="password-repeat" placeholder="Reenter Password" >
         
@@ -70,4 +72,5 @@
 <!--MODAL-->
 </body>
 <script src="../JS/modal.js"></script>
+<script src="../JS/main.js"></script>
 </html>
