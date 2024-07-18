@@ -249,6 +249,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 50px;
 }
 
 .search-header figure {
@@ -332,8 +336,12 @@ aside {
   background: linear-gradient(var(--SECONDGRCOLOR), var(--FIRSTGRCOLOR));
   filter: drop-shadow(0px -3px 5px rgba(103, 97, 97, 0.5));
   width: 17%;
+  height: 100%;
   z-index: 1;
   flex-grow: 1;
+  position: fixed;
+  top: 50px;
+  left: 0;
 }
 
 .sidebar-controls {
@@ -341,6 +349,7 @@ aside {
   height: 100%;
   display: grid;
   place-content: center;
+  position: sticky;
 }
 
 .sidebar-dropdown-list {
@@ -502,7 +511,7 @@ aside {
 }
 
 .project-card-layout {
-  padding: 3rem;
+  padding: 1rem 2rem 2rem 2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -510,7 +519,6 @@ aside {
   justify-items: center;
   box-sizing: border-box;
   gap: 3%;
-  
 }
 
 .column {
