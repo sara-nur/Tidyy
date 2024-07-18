@@ -502,12 +502,14 @@ aside {
 }
 
 .project-card-layout {
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  justify-items: center;
   box-sizing: border-box;
+  gap: 3%;
 }
 
 .column {
@@ -551,10 +553,9 @@ aside {
 }
 
 .project-card {
-  min-width: 200px;
-  min-height: 150px;
-  max-width: 200px;
-  max-height: 150px;
+  max-width: 20%;
+  max-height: 25%;
+  flex: 1 1 15%;
   border-radius: 0.7rem;
   padding: 1rem;
   margin: 1rem 0.5rem 0.5rem 0rem;
