@@ -171,6 +171,11 @@ form button {
   color: var(--TXTCOLOR);
 }
 
+#loginbtn,
+#createButton {
+  height: 14%;
+}
+
 input {
   text-align: left;
   padding: 0.45rem;
@@ -190,13 +195,17 @@ form button {
 
 /* ERROR HANDELERS -OPEN*/
 .error-message-container {
-  min-height: 60px;
+  min-height: 10px;
   width: 100%;
   text-align: center;
 }
 
 .error-message {
   display: none;
+  color: red;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
 }
 /* ERROR HANDELERS -CLOSE*/
 
