@@ -1,18 +1,28 @@
 
+let TaskList = [{name:"Classes",Prority:"High",Progress:45, Asignie:"Sara.Nur"},
+                {name:"Operators",Prority:"High",Progress:0, Asignie:"Admir"},
+                {name:"File Managment",Prority:"High",Progress:100, Asignie:"Sara.Nur"},
+                {name:"Copy Constructor",Prority:"High",Progress:75, Asignie:"Admir"},
+                {name:"Move Constructor",Prority:"High",Progress:0, Asignie:"Sara.Nur"},
+];
+
 addEventListener("load",LoadPage());
 
 function LoadPage(){
     ChangeOrgProjection();
     LoadOrg();
     LoadProjectsTest();
-    LoadProjectCards();
+    DisplayTasks();
+    
 }
 
 
 function ChangeOrgProjection(){
     let OrgName= localStorage.getItem("selectedOrganisation");
+    let ProjName=localStorage.getItem("selectedProject")
     console.log(OrgName);
     document.getElementById("firstddl").innerHTML = OrgName;
+    document.getElementById("Secondddl").innerHTML=ProjName;
 }
 
 function LoadOrg(){
@@ -79,4 +89,86 @@ let content = document.getElementById("firstContentddl").getElementsByTagName("a
 function SelectedProj(org){
     
     localStorage.setItem("selectedProject",org);
+}
+
+
+const Button = document.getElementById("createBtn");
+
+Button.addEventListener("click", (e)=>{
+    e.preventDefault();
+    AddNewTask();
+});
+
+
+function AddNewTask(){
+
+
+}
+
+
+function DisplayTasks(){
+    let toDO = document.getElementById("to-do-column");
+    let inProgress = document.getElementById("in-progress-column");
+    let codeReview = document.getElementById("code-review");
+    let done = document.getElementById("done-column");
+  
+    
+
+    for( let i = 0; i < TaskList.length; i++){
+        if(TaskList[i].Progress == 0){
+            toDO.innerHTML += `
+                <div class="card">
+              <div class="card-header">
+                <h3>${TaskList[i].name}</h3>
+                <img src="../Img/virus.png" alt="" />
+              </div>
+              <p>Priority: ${TaskList[i].Prority}</p>
+              <p>Progress: ${TaskList[i].Progress}%</p>
+              <p>Asignee: ${TaskList[i].Asignie}</p>
+            </div>
+            `
+        }
+
+        if(TaskList[i].Progress >= 1 && TaskList[i].Progress <= 74 ){
+                inProgress.innerHTML += `
+                    <div class="card">
+                  <div class="card-header">
+                    <h3>${TaskList[i].name}</h3>
+                    <img src="../Img/virus.png" alt="" />
+                  </div>
+                  <p>Priority: ${TaskList[i].Prority}</p>
+                  <p>Progress: ${TaskList[i].Progress}%</p>
+                  <p>Asignee: ${TaskList[i].Asignie}</p>
+                </div>
+                `
+            }
+        
+            if(TaskList[i].Progress >= 75 && TaskList[i].Progress <= 99 ){
+                codeReview.innerHTML += `
+                    <div class="card">
+                  <div class="card-header">
+                    <h3>${TaskList[i].name}</h3>
+                    <img src="../Img/virus.png" alt="" />
+                  </div>
+                  <p>Priority: ${TaskList[i].Prority}</p>
+                  <p>Progress: ${TaskList[i].Progress}%</p>
+                  <p>Asignee: ${TaskList[i].Asignie}</p>
+                </div>
+                `
+            }
+
+            if(TaskList[i].Progress == 100 ){
+                done.innerHTML += `
+                    <div class="card">
+                  <div class="card-header">
+                    <h3>${TaskList[i].name}</h3>
+                    <img src="../Img/virus.png" alt="" />
+                  </div>
+                  <p>Priority: ${TaskList[i].Prority}</p>
+                  <p>Progress: ${TaskList[i].Progress}%</p>
+                  <p>Asignee: ${TaskList[i].Asignie}</p>
+                </div>
+                `
+            }
+    }
 }
