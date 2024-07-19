@@ -14,26 +14,54 @@ const errEmailIncorrect = document.getElementById(
 const errEmailEmpty = document.getElementById("errorEmailRegisterEmpty");
 const errPasswordNotMatch = document.getElementById("errorPasswordRegister");
 const errPasswordEmpty = document.getElementById("errorPasswordRegisterEmpty");
+const errPasswordIncorrect = document.getElementById(
+  "errorPasswordRegisterIncorrect"
+);
 
 //VARIABLES FROM BUTTON FIELDS
 const loginBtn = document.getElementById("loginbtn");
 const registerBtn = document.getElementById("RegisterModalbtn");
 
 //LISTS
-const usersList = ["sara.nur", "ado", "ramo"];
-const passwordsList = ["sara", "ado", "ramo"];
-const emailsList = ["sara.nur@gmail.com"];
+let usernamesList = ["sara.nur", "ado", "ramo"];
+let passwordsList = ["Sara1234!", "Ado1234!", "Ramo1234!"];
+let emailsList = ["sara.nur@gmail.com", "ado@gmail.com", "ramo@gmail.com"];
 
 //VARIABLES
 let timeoutId;
+
+// Function to save user data to sessionStorage
+function saveUserDataToSessionStorage() {
+  sessionStorage.setItem("usernamesList", JSON.stringify(usernamesList));
+  sessionStorage.setItem("passwordsList", JSON.stringify(passwordsList));
+  sessionStorage.setItem("emailsList", JSON.stringify(emailsList));
+}
+
+// Function to retrieve user data from sessionStorage
+function retrieveUserDataFromSessionStorage() {
+  if (sessionStorage.getItem("usernamesList")) {
+    usernamesList = JSON.parse(sessionStorage.getItem("usernamesList"));
+  }
+  if (sessionStorage.getItem("passwordsList")) {
+    passwordsList = JSON.parse(sessionStorage.getItem("passwordsList"));
+  }
+  if (sessionStorage.getItem("emailsList")) {
+    emailsList = JSON.parse(sessionStorage.getItem("emailsList"));
+  }
+}
+
+// Call the retrieve function on page load to initialize the lists from sessionStorage
+window.addEventListener("load", function () {
+  retrieveUserDataFromSessionStorage();
+});
 
 function ValidateUserLogin() {
   let Username = document.getElementById("username").value.trim();
   let Password = document.getElementById("password").value.trim();
   let ispisiError = true;
 
-  for (let i = 0; i < usersList.length; i++) {
-    if (Username === usersList[i] && Password === passwordsList[i]) {
+  for (let i = 0; i < usernamesList.length; i++) {
+    if (Username === usernamesList[i] && Password === passwordsList[i]) {
       window.location.href = "home-screen.html";
       ispisiError = false;
     }
@@ -42,6 +70,10 @@ function ValidateUserLogin() {
   if (ispisiError) {
     errLogin.style.display = "block";
   }
+
+  console.log(usernamesList);
+  console.log(passwordsList);
+  console.log(emailsList);
 }
 
 if (loginBtn != null) {
@@ -52,25 +84,47 @@ if (loginBtn != null) {
 }
 
 function RegisterUser() {
-  console.log(usersList);
+  const usernameRegistracija =
+    document.getElementById("usernameRegister").value;
+  const emailRegistracija = document.getElementById("emali").value;
+  const passwordRegistracija =
+    document.getElementById("passwordRegister").value;
+
+  if (ValidateUserRegister()) {
+    alert(
+      "Uspjesno ste se registrovali! Molimo logujte se da potvrdite svoje kredencijale."
+    );
+
+    usernamesList.push(usernameRegistracija);
+    emailsList.push(emailRegistracija);
+    passwordsList.push(passwordRegistracija);
+
+    // Save updated data to sessionStorage
+    saveUserDataToSessionStorage();
+
+    console.log("Usernames:", usernamesList);
+    console.log("Passwords:", passwordsList);
+    console.log("Emails:", emailsList);
+
+    setTimeout(function () {
+      window.location.href = "index.html";
+    }, 500);
+  }
+
+  console.log(usernamesList);
   console.log(passwordsList);
   console.log(emailsList);
-
-  if (!ValidacijaUsera()) {
-    //window.location.href=
-  }
 }
 
-function ValidacijaUsera() {
+function ValidateUserRegister() {
   const isUsernameValid = IsUsernameValid();
   const isEmailValid = IsEmailValid();
-  const isPasswordEmpty = IsPasswordEmpty();
-  const isPasswordCorrect = IsPasswordCorrect();
+  const isPasswordValid = IsPasswordValid();
 
-  if (isUsernameValid && isEmailValid && isPasswordEmpty && isPasswordCorrect) {
-    return false;
+  if (isUsernameValid && isEmailValid && isPasswordValid) {
+    return true;
   }
-  return true;
+  return false;
 }
 
 if (registerBtn != null) {
@@ -81,6 +135,12 @@ if (registerBtn != null) {
 }
 
 function IsUsernameValid() {
+  return (
+    UsernameInRegistrationFormEmpty() && UsernameInRegistrationFormExists()
+  );
+}
+
+function UsernameInRegistrationFormEmpty() {
   const usernameRegistracija =
     document.getElementById("usernameRegister").value;
 
@@ -90,12 +150,18 @@ function IsUsernameValid() {
     return false;
   } else {
     errUsernameEmpty.style.display = "none";
+    return true;
   }
+}
+
+function UsernameInRegistrationFormExists() {
+  const usernameRegistracija =
+    document.getElementById("usernameRegister").value;
 
   let usernameExists = false;
 
-  for (let i = 0; i < usersList.length; i++) {
-    if (usernameRegistracija === usersList[i]) {
+  for (let i = 0; i < usernamesList.length; i++) {
+    if (usernameRegistracija === usernamesList[i]) {
       usernameExists = true;
       break;
     }
@@ -103,9 +169,10 @@ function IsUsernameValid() {
 
   if (usernameExists) {
     errUsernameRegister.style.display = "block";
+    errUsernameEmpty.style.display = "none";
     return false;
   } else {
-    errUsernameEmpty.style.display = "none";
+    errUsernameRegister.style.display = "none";
     return true;
   }
 }
@@ -146,7 +213,7 @@ function EmailInRegistrationFormExists() {
 
   if (emailExists) {
     errEmailRegister.style.display = "block";
-    errEmailEmpty.style.display = "block";
+    errEmailEmpty.style.display = "none";
     errEmailIncorrect.style.display = "none";
 
     return true;
@@ -171,7 +238,15 @@ function EmailInRegistrationFormRegex() {
   }
 }
 
-function IsPasswordEmpty() {
+function IsPasswordValid() {
+  return (
+    PasswordInRegistrationFormEmpty() &&
+    PasswordInRegisrationFormMatch() &&
+    PasswordInRegisrationFormRegex()
+  );
+}
+
+function PasswordInRegistrationFormEmpty() {
   const passwordRegistracija =
     document.getElementById("passwordRegister").value;
   const passwordRegistracijaRepeat =
@@ -180,6 +255,7 @@ function IsPasswordEmpty() {
   if (passwordRegistracija === "" || passwordRegistracijaRepeat === "") {
     errPasswordEmpty.style.display = "block";
     errPasswordNotMatch.style.display = "none";
+    errPasswordIncorrect.style.display = "none";
     return false;
   } else {
     errPasswordEmpty.style.display = "none";
@@ -187,7 +263,7 @@ function IsPasswordEmpty() {
   }
 }
 
-function IsPasswordCorrect() {
+function PasswordInRegisrationFormMatch() {
   const passwordRegistracija =
     document.getElementById("passwordRegister").value;
   const passwordRegistracijaRepeat =
@@ -196,9 +272,29 @@ function IsPasswordCorrect() {
   if (passwordRegistracija !== passwordRegistracijaRepeat) {
     errPasswordNotMatch.style.display = "block";
     errPasswordEmpty.style.display = "none";
+    errPasswordIncorrect.style.display = "none";
     return false;
   } else {
     errPasswordNotMatch.style.display = "none";
+    return true;
+  }
+}
+
+function PasswordInRegisrationFormRegex() {
+  const passwordRegistracija =
+    document.getElementById("passwordRegister").value;
+  const passwordRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  console.log("Password:", passwordRegistracija);
+
+  if (!passwordRegex.test(passwordRegistracija)) {
+    errPasswordIncorrect.style.display = "block";
+    errPasswordEmpty.style.display = "none";
+    errPasswordNotMatch.style.display = "none";
+    return false;
+  } else {
+    errPasswordIncorrect.style.display = "none";
     return true;
   }
 }

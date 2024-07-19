@@ -40,7 +40,7 @@
 
           <div class="error-message-container">
             <p class="error-message" id="error">
-              ❗Incorrect username or password❗
+              Incorrect username or password
             </p>
           </div>
 
@@ -64,13 +64,13 @@
             />
             <div class="error-message-container-register">
               <p class="error-message" id="errorUsernameRegister">
-                This username is already taken❗
+                This username is already taken
               </p>
             </div>
 
             <div class="error-message-container-register">
               <p class="error-message" id="errorUsernameRegisterEmpty">
-                Username field cannot be empty❗
+                Username field cannot be empty
               </p>
             </div>
 
@@ -78,20 +78,19 @@
 
             <div class="error-message-container-register">
               <p class="error-message" id="errorEmailRegister">
-                This email is already taken❗
+                This email is already taken
               </p>
             </div>
 
             <div class="error-message-container-register">
               <p class="error-message" id="errorEmailRegisterEmpty">
-                Email field cannot be empty❗
+                Email field cannot be empty
               </p>
             </div>
 
             <div class="error-message-container-register">
               <p class="error-message" id="errorEmailRegisterIncorrect">
-                Email you entered is not valid, please enter the correct email
-                address.
+                Please enter a valid email address.
               </p>
             </div>
 
@@ -111,19 +110,24 @@
 
             <div class="error-message-container-register">
               <p class="error-message" id="errorPasswordRegister">
-                Passwords must match❗
+                Passwords must match
               </p>
             </div>
 
             <div class="error-message-container-register">
               <p class="error-message" id="errorPasswordRegisterEmpty">
-                Password field cannot be empty❗
+                Password field cannot be empty
               </p>
             </div>
 
-            <button id="RegisterModalbtn" onclick="RegisterUser()">
-              Register
-            </button>
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorPasswordRegisterIncorrect">
+                Password must be at least 8 characters and include lowercase,
+                uppercase, numeric, and special characters (!@#$%^&*).
+              </p>
+            </div>
+
+            <button id="RegisterModalbtn">Register</button>
             <button type="Cancel" id="CancelBtn">Cancel</button>
           </form>
         </section>
