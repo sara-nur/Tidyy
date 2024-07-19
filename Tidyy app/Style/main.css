@@ -162,6 +162,7 @@ form button,
 form input,
 form p {
   margin: 1rem 0;
+  color: blue;
 }
 
 form input,
@@ -199,6 +200,15 @@ form button {
   display: none;
 }
 /* ERROR HANDELERS -CLOSE*/
+
+/* ERROR HANDELERS FOR REGISTRATION -OPEN*/
+
+.error-message-container-register {
+  text-align: center;
+  width: fit-content;
+}
+
+/* ERROR HANDELERS REGISTRATION -CLOSE*/
 
 /* PSEUDO -OPEN*/
 input::placeholder {

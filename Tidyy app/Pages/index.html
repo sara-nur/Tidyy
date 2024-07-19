@@ -1,76 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tidyy</title>
-    <link rel="icon" href="../Img/cleaning.png">
-    <link rel="stylesheet" href="../Style/main.css">
-</head>
-<body class="login-body">
-    
+    <link rel="icon" href="../Img/cleaning.png" />
+    <link rel="stylesheet" href="../Style/main.css" />
+  </head>
+  <body class="login-body">
     <!--MAIN PAGE-->
     <header class="login-header">
-        <h1>Tidyy</h1>
+      <h1>Tidyy</h1>
     </header>
     <main class="login-main">
-        <!-- IMAGES -->
-        <img src="../Img/to-do-list.png" alt="" class="login-page too-do">
-        <img src="../Img/check.png" alt="" class="login-page check">
-        <img src="../Img/collaboration.png" alt="" class="login-page collab">
-        <img src="../Img/teamwork.png" alt="" class="login-page team">
-        <img src="../Img/time-to-market.png" alt="" class="login-page time">
-        <!-- IMAGES -->
+      <!-- IMAGES -->
+      <img src="../Img/to-do-list.png" alt="" class="login-page too-do" />
+      <img src="../Img/check.png" alt="" class="login-page check" />
+      <img src="../Img/collaboration.png" alt="" class="login-page collab" />
+      <img src="../Img/teamwork.png" alt="" class="login-page team" />
+      <img src="../Img/time-to-market.png" alt="" class="login-page time" />
+      <!-- IMAGES -->
 
-        <section class="input-box login">
-            <h2>Log in to continue</h2>
-            <form id="login-form">
-                
-                <input type="text" id="username" name="username" placeholder="Username" >
-               
-                <input type="password" id="password" name="password" placeholder="Password" >
+      <section class="input-box login">
+        <h2>Log in to continue</h2>
+        <form id="login-form">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
 
-                <div class="error-message-container" >
-                    <p class="error-message" id="error">❗Incorrect username or password❗</p>
-                </div>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
 
-                <button type="submit" id="loginbtn">Log In</button>
-                <button type="button" id="createButton" >Register</button>
+          <div class="error-message-container">
+            <p class="error-message" id="error">
+              ❗Incorrect username or password❗
+            </p>
+          </div>
 
-                
-
-            </form>
-        </section>
+          <button type="submit" id="loginbtn">Log In</button>
+          <button type="button" id="createButton">Register</button>
+        </form>
+      </section>
     </main>
 
-<!--MODAL-->
-<div class="modal"  id="createModal">
-    <div class="modal background">
-
+    <!--MODAL-->
+    <div class="modal" id="createModal">
+      <div class="modal background">
         <section class="input-box register">
-            <h2>Make a new account</h2>
-            <form>
-                <input type="text" id="usernameRegister" name="username" placeholder="Username" >
-                
-                <input type="text" id="emali" name="emali" placeholder="Emali" >
-        
-                <input type="password" id="passwordRegister" name="password" placeholder="Password" >
-        
-                <input type="password" id="password-repeat" name="password-repeat" placeholder="Reenter Password" >
-        
-                <button type="submit" id="RegisterModalbtn">Register</button>
-                <button type="Cancel" id="CancelBtn">Cancel</button>
-        
-                <div class="error-message-container" id="errorRegister">
-                    <p class="error-message">❗Fields can't be empty❗</p>
-                </div>
-            </form>
+          <h2>Make a new account</h2>
+          <form>
+            <input
+              type="text"
+              id="usernameRegister"
+              name="username"
+              placeholder="Username"
+            />
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorUsernameRegister">
+                This username is already taken❗
+              </p>
+            </div>
+
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorUsernameRegisterEmpty">
+                Username field cannot be empty❗
+              </p>
+            </div>
+
+            <input type="text" id="emali" name="emali" placeholder="Emali" />
+
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorEmailRegister">
+                This email is already taken❗
+              </p>
+            </div>
+
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorEmailRegisterEmpty">
+                Email field cannot be empty❗
+              </p>
+            </div>
+
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorEmailRegisterIncorrect">
+                Email you entered is not valid, please enter the correct email
+                address.
+              </p>
+            </div>
+
+            <input
+              type="password"
+              id="passwordRegister"
+              name="password"
+              placeholder="Password"
+            />
+
+            <input
+              type="password"
+              id="password-repeat"
+              name="password-repeat"
+              placeholder="Reenter Password"
+            />
+
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorPasswordRegister">
+                Passwords must match❗
+              </p>
+            </div>
+
+            <div class="error-message-container-register">
+              <p class="error-message" id="errorPasswordRegisterEmpty">
+                Password field cannot be empty❗
+              </p>
+            </div>
+
+            <button id="RegisterModalbtn" onclick="RegisterUser()">
+              Register
+            </button>
+            <button type="Cancel" id="CancelBtn">Cancel</button>
+          </form>
         </section>
+      </div>
     </div>
-</div>
-    
-<!--MODAL-->
-</body>
-<script src="../JS/modal.js"></script>
-<script src="../JS/main.js"></script>
+
+    <!--MODAL-->
+  </body>
+  <script src="../JS/modal.js"></script>
+  <script src="../JS/main.js"></script>
 </html>
