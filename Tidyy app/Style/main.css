@@ -123,6 +123,7 @@ button:hover {
 .background {
   display: grid;
   place-content: center;
+  height: 100%;
 }
 
 .register {
@@ -402,6 +403,10 @@ aside {
   border: 2px solid black;
 }
 
+#createButton{
+  height: 45.11px;
+}
+
 .dropdown-list-content {
   display: none;
   background-color: var(--BACKCOLOR);
@@ -578,6 +583,8 @@ aside {
   font-weight: bolder;
   text-align: center;
 }
+
+
 /* PROGRES COLUMNS - CLOSE */
 
 /* CARD - OPEN */
@@ -648,6 +655,10 @@ aside {
 
 .show{
   display: block;
+}
+
+.hide{
+  display: none;
 }
 
 /* TEAM BANNER - OPEN */
