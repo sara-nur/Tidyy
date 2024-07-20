@@ -722,3 +722,12 @@ aside {
   flex-direction: column;
 }
 /* TEAM BANNER - CLOSE */
+
+/*CALENDAR OPEN*/
+.calendar {
+  display: flex;
+  justify-content: right;
+  justify-items: center;
+  margin: 1rem;
+  padding: 1rem;
+}
