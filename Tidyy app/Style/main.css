@@ -646,6 +646,10 @@ aside {
 }
 /* CARD - CLOSE */
 
+.show{
+  display: block;
+}
+
 /* TEAM BANNER - OPEN */
 
 .team-card {
