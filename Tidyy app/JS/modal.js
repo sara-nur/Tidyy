@@ -101,3 +101,14 @@ if (teamBtn != null)
 function moveToOverview() {
   window.location.href = "team-overview.html";
 }
+
+const calendarBtn = document.getElementById("calendarBtn");
+
+if (calendarBtn != null)
+  calendarBtn.addEventListener("click", () => {
+    window.location.href = "calendar-screen.html";
+  });
+
+function moveToOverview() {
+  window.location.href = "calendar-screen.html";
+}
