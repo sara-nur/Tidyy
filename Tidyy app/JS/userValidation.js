@@ -4,6 +4,7 @@ let OkBackgroundColor = "#DFF6D8";
 
 //ERROR MESSAGES
 const errLogin = document.getElementById("error");
+const errLoginEmpty = document.getElementById("errorLoginEmpty");
 const errRegister = document.getElementById("errorRegister");
 const errUsernameRegister = document.getElementById("errorUsernameRegister");
 const errEmailRegister = document.getElementById("errorEmailRegister");
@@ -58,22 +59,29 @@ window.addEventListener("load", function () {
 function ValidateUserLogin() {
   let Username = document.getElementById("username").value.trim();
   let Password = document.getElementById("password").value.trim();
-  let ispisiError = true;
+  let ispisiError = null;
 
-  for (let i = 0; i < usernamesList.length; i++) {
-    if (Username === usernamesList[i] && Password === passwordsList[i]) {
-      window.location.href = "home-screen.html";
-      ispisiError = false;
+  if (Username === "" || Password === "") {
+    console.log(Username, Password);
+    ispisiError = true;
+  } else {
+    for (let i = 0; i < usernamesList.length; i++) {
+      if (Username === usernamesList[i] && Password === passwordsList[i]) {
+        window.location.href = "home-screen.html";
+      }
     }
   }
-
-  if (ispisiError) {
+  if (ispisiError === true) {
+    errLoginEmpty.style.display = "block";
+    errLogin.style.display = "none";
+  } else if (ispisiError === false) {
     errLogin.style.display = "block";
+    errLoginEmpty.style.display = "none";
+  } else {
+    errLogin.style.display = "none";
+    errLoginEmpty.style.display = "none";
   }
-
-  console.log(usernamesList);
-  console.log(passwordsList);
-  console.log(emailsList);
+  console.log(ispisiError);
 }
 
 if (loginBtn != null) {

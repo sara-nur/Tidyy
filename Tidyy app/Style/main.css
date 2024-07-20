@@ -168,14 +168,14 @@ form p {
 
 form input,
 form button {
-  height: 8%;
+  height: 45px;
   font-size: 1rem;
   color: var(--TXTCOLOR);
 }
 
 #loginbtn,
 #createButton {
-  height: 14%;
+  height: 45px;
 }
 
 input {
@@ -191,6 +191,16 @@ form button {
   padding: 0.7rem;
   border-radius: 0.4rem;
   border: 1px solid var(--TXTCOLOR);
+  height: 11%;
+}
+
+.create-button,
+.cancel-button {
+  height: 45px;
+}
+
+#RegisterModalbtn {
+  height: 45px;
 }
 
 /* MODALS -CLOSE*/
@@ -403,8 +413,8 @@ aside {
   border: 2px solid black;
 }
 
-#createButton{
-  height: 45.11px;
+#createButton {
+  height: 45px;
 }
 
 .dropdown-list-content {
@@ -584,7 +594,6 @@ aside {
   text-align: center;
 }
 
-
 /* PROGRES COLUMNS - CLOSE */
 
 /* CARD - OPEN */
@@ -653,11 +662,11 @@ aside {
 }
 /* CARD - CLOSE */
 
-.show{
+.show {
   display: block;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
