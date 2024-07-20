@@ -77,7 +77,7 @@
           </div>
 
           <button
-            class="create-org-button"
+            class="create-org-button create-btn"
             id="createButton"
             data-intro="Create your new organization here"
             data-step="5"
@@ -89,7 +89,7 @@
     </main>
 
     <div class="modal" id="createModal">
-      <div class="modal background">
+      <div class="background">
         <section class="input-box create">
           <h2>Create New Organization</h2>
           <form>
@@ -110,14 +110,14 @@
             <div class="error-message-container">
               <p class="error-message">❗Fields can't be empty❗</p>
             </div>
-            <button class="create-button" id="createBtn">Create</button>
-            <button class="cancel-button">Cancel</button>
+            <button type="button" class="create-button" id="createBtn">Create</button>
+            <button type="button" class="cancel-button">Cancel</button>
           </form>
         </section>
       </div>
     </div>
   </body>
   <script src="../JS/sidebar.js"></script>
-  <!--<script src="../JS/modal.js"></script>-->
+  <script src="../JS/modal.js"></script>
   <script src="../JS/home.js"></script>
 </html>
