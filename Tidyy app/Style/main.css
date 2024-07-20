@@ -14,6 +14,7 @@
   --PROJECTCOLORTWO: rgb(213, 137, 220);
   --PROJECTCOLORTHREE: rgb(156, 188, 128);
   --PROJECTCOLORFOUR: rgb(84, 114, 125);
+  --ERRORCOLOR: rgb(255, 0, 0);
 }
 /* VARIABLES -CLOSE*/
 
@@ -202,7 +203,7 @@ form button {
 
 .error-message {
   display: none;
-  color: red;
+  color: var(--ERRORCOLOR);
   font-weight: bold;
   padding: 0;
   margin: 0;
@@ -221,7 +222,7 @@ form button {
 
 .error-message-container-register p {
   float: left;
-  color: red;
+  color: var(--ERRORCOLOR);
   font-weight: bold;
   font-size: smaller;
   padding: 0;
@@ -565,7 +566,6 @@ aside {
   width: 100%;
   flex-shrink: 0;
   min-width: 100%;
-  background-color: red;
   background-image: linear-gradient(var(--FIRSTGRCOLOR), var(--SECONDGRCOLOR));
   border-radius: 0.4rem 0.4rem 0.2rem 0.2rem;
   font-size: 1rem;
@@ -651,7 +651,6 @@ aside {
 .team-card {
   height: 50px;
   width: 50%;
-  background-color: red;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -731,3 +730,27 @@ aside {
   margin: 1rem;
   padding: 1rem;
 }
+
+/*CALENDAR CLOSE*/
+
+/*INTRO.JS OPEN*/
+.introjs-tooltip {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: "Arial", sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.introjs-tooltiptext {
+  font-size: 14px; /* Font size */
+  line-height: 1.5; /* Line height */
+  color: black;
+}
+
+.introjs-helperLayer {
+  border: 1px solid blue;
+  padding-bottom: 0;
+  width: fit-content;
+  justify-content: center;
+}
+/*INTRO JS CLOSE*/
