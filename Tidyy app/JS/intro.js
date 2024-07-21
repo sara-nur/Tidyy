@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  if (!localStorage.getItem("tourCompleted")) {
+  const loggedInUser = sessionStorage.getItem("loggedInUser");
+
+  if (loggedInUser !== "sara.nur" && !localStorage.getItem("tourCompleted")) {
     introJs().start();
 
     introJs().oncomplete(function () {
@@ -11,5 +13,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
-

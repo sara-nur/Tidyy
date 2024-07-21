@@ -51,37 +51,32 @@ function retrieveUserDataFromSessionStorage() {
   }
 }
 
-// Call the retrieve function on page load to initialize the lists from sessionStorage
 window.addEventListener("load", function () {
   retrieveUserDataFromSessionStorage();
 });
 
 function ValidateUserLogin() {
-  let Username = document.getElementById("username").value.trim();
-  let Password = document.getElementById("password").value.trim();
-  let ispisiError = null;
+  let username = document.getElementById("username").value.trim();
+  let password = document.getElementById("password").value.trim();
 
-  if (Username === "" || Password === "") {
-    console.log(Username, Password);
-    ispisiError = true;
-  } else {
-    for (let i = 0; i < usernamesList.length; i++) {
-      if (Username === usernamesList[i] && Password === passwordsList[i]) {
-        window.location.href = "home-screen.html";
-      }
-    }
-  }
-  if (ispisiError === true) {
+  if (!username || !password) {
     errLoginEmpty.style.display = "block";
     errLogin.style.display = "none";
-  } else if (ispisiError === false) {
-    errLogin.style.display = "block";
-    errLoginEmpty.style.display = "none";
-  } else {
-    errLogin.style.display = "none";
-    errLoginEmpty.style.display = "none";
+    return;
   }
-  console.log(ispisiError);
+
+  for (let i = 0; i < usernamesList.length; i++) {
+    if (username === usernamesList[i] && password === passwordsList[i]) {
+      sessionStorage.setItem("loggedInUser", username);
+      window.location.href = "home-screen.html";
+      errLogin.style.display = "none";
+      errLoginEmpty.style.display = "none";
+      break;
+    } else {
+      errLogin.style.display = "block";
+      errLoginEmpty.style.display = "none";
+    }
+  }
 }
 
 if (loginBtn != null) {
