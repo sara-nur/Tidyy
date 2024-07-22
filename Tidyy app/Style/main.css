@@ -536,6 +536,10 @@ aside {
 .banner-information p {
   color: var(--TXTCOLOR);
 }
+
+.highlightButton {
+  background-color: red;
+}
 /* BANNER - OPEN */
 
 /*MAIN BODY ORGANIZATION PAGE - OPEN*/
