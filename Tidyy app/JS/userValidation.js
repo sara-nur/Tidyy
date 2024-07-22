@@ -90,11 +90,13 @@ if (loginBtn != null) {
 }
 
 function RegisterUser() {
-  const usernameRegistracija =
-    document.getElementById("usernameRegister").value;
-  const emailRegistracija = document.getElementById("emali").value;
-  const passwordRegistracija =
-    document.getElementById("passwordRegister").value;
+  const usernameRegistracija = document
+    .getElementById("usernameRegister")
+    .value.trim();
+  const emailRegistracija = document.getElementById("emali").value.trim();
+  const passwordRegistracija = document
+    .getElementById("passwordRegister")
+    .value.trim();
 
   if (ValidateUserRegister()) {
     alert(
@@ -147,8 +149,9 @@ function IsUsernameValid() {
 }
 
 function UsernameInRegistrationFormEmpty() {
-  const usernameRegistracija =
-    document.getElementById("usernameRegister").value;
+  const usernameRegistracija = document
+    .getElementById("usernameRegister")
+    .value.trim();
 
   if (usernameRegistracija === "") {
     errUsernameEmpty.style.display = "block";
@@ -161,8 +164,9 @@ function UsernameInRegistrationFormEmpty() {
 }
 
 function UsernameInRegistrationFormExists() {
-  const usernameRegistracija =
-    document.getElementById("usernameRegister").value;
+  const usernameRegistracija = document
+    .getElementById("usernameRegister")
+    .value.trim();
 
   let usernameExists = false;
 
@@ -192,7 +196,7 @@ function IsEmailValid() {
 }
 
 function EmailInRegistrationFormEmpty() {
-  const emailRegistracija = document.getElementById("emali").value;
+  const emailRegistracija = document.getElementById("emali").value.trim();
 
   if (emailRegistracija === "") {
     errEmailEmpty.style.display = "block";
@@ -206,7 +210,7 @@ function EmailInRegistrationFormEmpty() {
 }
 
 function EmailInRegistrationFormExists() {
-  const emailRegistracija = document.getElementById("emali").value;
+  const emailRegistracija = document.getElementById("emali").value.trim();
 
   let emailExists = false;
 
@@ -230,7 +234,7 @@ function EmailInRegistrationFormExists() {
 }
 
 function EmailInRegistrationFormRegex() {
-  const emailRegistracija = document.getElementById("emali").value;
+  const emailRegistracija = document.getElementById("emali").value.trim();
 
   const emailRegex = /^[a-zA-Z0-9.-_]+@[a-zA-Z]+.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(emailRegistracija)) {
@@ -253,10 +257,12 @@ function IsPasswordValid() {
 }
 
 function PasswordInRegistrationFormEmpty() {
-  const passwordRegistracija =
-    document.getElementById("passwordRegister").value;
-  const passwordRegistracijaRepeat =
-    document.getElementById("password-repeat").value;
+  const passwordRegistracija = document
+    .getElementById("passwordRegister")
+    .value.trim();
+  const passwordRegistracijaRepeat = document
+    .getElementById("password-repeat")
+    .value.trim();
 
   if (passwordRegistracija === "" || passwordRegistracijaRepeat === "") {
     errPasswordEmpty.style.display = "block";
@@ -270,10 +276,12 @@ function PasswordInRegistrationFormEmpty() {
 }
 
 function PasswordInRegisrationFormMatch() {
-  const passwordRegistracija =
-    document.getElementById("passwordRegister").value;
-  const passwordRegistracijaRepeat =
-    document.getElementById("password-repeat").value;
+  const passwordRegistracija = document
+    .getElementById("passwordRegister")
+    .value.trim();
+  const passwordRegistracijaRepeat = document
+    .getElementById("password-repeat")
+    .value.trim();
 
   if (passwordRegistracija !== passwordRegistracijaRepeat) {
     errPasswordNotMatch.style.display = "block";
@@ -287,8 +295,9 @@ function PasswordInRegisrationFormMatch() {
 }
 
 function PasswordInRegisrationFormRegex() {
-  const passwordRegistracija =
-    document.getElementById("passwordRegister").value;
+  const passwordRegistracija = document
+    .getElementById("passwordRegister")
+    .value.trim();
   const passwordRegex =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
