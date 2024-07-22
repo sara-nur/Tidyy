@@ -2,6 +2,9 @@
 let ErrorBackgroundColor = "#FE7D7D";
 let OkBackgroundColor = "#DFF6D8";
 
+sessionStorage.setItem("org", "");
+sessionStorage.setItem("proj", "");
+
 //ERROR MESSAGES
 const errLogin = document.getElementById("error");
 const errLoginEmpty = document.getElementById("errorLoginEmpty");
