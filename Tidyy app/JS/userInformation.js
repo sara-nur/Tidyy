@@ -4,9 +4,9 @@ const userBtn = document.querySelector("#profileOptions");
 
 const userDropdownOptions = document.querySelector(".profile-options-dropdown");
 
-let userName = document.querySelector("#userName");
+const userName = document.getElementById("userName");
 
-userName.innerHTML = currentUser;
+userName.innerHTML = sessionStorage.getItem("loggedInUser");
 
 userBtn.addEventListener("click", (e)=>{
     e.preventDefault();
