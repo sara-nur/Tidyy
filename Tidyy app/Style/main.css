@@ -402,8 +402,7 @@ aside {
 }
 
 .button-dropdown,
-.a-tag-button,
-.create-org-button {
+.a-tag-button {
   color: black;
   font-size: 1rem;
   text-align: center;
@@ -411,6 +410,14 @@ aside {
   margin-top: 2rem;
   border-radius: 0.4rem;
   border: 2px solid black;
+}
+
+.create-org-button {
+  height: 45px;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0.7rem 2rem;
+  border-radius: 0.4rem;
 }
 
 #createButton {
