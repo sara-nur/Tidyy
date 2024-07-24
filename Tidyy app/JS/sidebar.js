@@ -33,7 +33,6 @@ if(User === "sara.nur"){
     listProj = GetList("NewProject");
 }
 
-console.log(modalContent);
 
 for(let i = 0; i < modalContent.length; i++){
     modalContent[i].innerHTML = "";
@@ -55,7 +54,6 @@ for(let i = 0; i < modalContent.length; i++){
         `
         }
     }
-    console.log(modalContent[i]);
 }
 
 

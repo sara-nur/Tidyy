@@ -11,7 +11,7 @@
     <header class="search-header">
       <h1>Tidyy</h1>
       <span>
-        <input type="search" placeholder="Search" />
+        <input id="search" type="search" placeholder="Search" />
         <button class="search-btn">
           <img src="../Img/search.png" alt="" />
         </button>
@@ -33,11 +33,12 @@
           <div class="banner-information organisation">
             <figure>
               <img src="../Img/briefcase.png" alt="" />
-              <h2>Subtask #1</h2>
+              <h2 id="banner-subtask">Subtask #1</h2>
             </figure>
             <p>
-              <a href="">Test organistaion #1</a>/ <a href="">Project #1</a>/
-              <a href="">Task #1</a>
+              <a href="orgainsation-screen.html" id="banner-org">Test organistaion #1</a>/
+               <a href="projects-screen.html" id="banner-proj">Project #1</a>/
+              <a href="my-subtasks-screen.html" id="banner-task">Task #1</a>
             </p>
           </div>
           <div class="banner-buttons organisation">
@@ -156,4 +157,5 @@
   <script src="../JS/modal.js" type="module"></script>
   <script src="../JS/intro.js" type="module"></script>
   <script src="../JS/userInformation.js" type="module"></script>
+  <script src="../JS/bannerInfo.js" type="module"></script>
 </html>

@@ -33,7 +33,7 @@ console.log(projectList);
     for( let i = 0; i < projectList.length; i++){
         Projects.innerHTML+=
         `
-            <div id="project-card-1" class="project-card">
+            <div id="project-card-1" class="project-card card">
               <div class="card-header">
                 <h3>${projectList[i]}</h3>
               </div>

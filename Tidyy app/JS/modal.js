@@ -5,6 +5,7 @@ const createNew = document.querySelectorAll(".create-button");
 const User = sessionStorage.getItem("loggedInUser");
 const org = sessionStorage.getItem("org");
 const proj = sessionStorage.getItem("proj");
+const task = sessionStorage.getItem("task");
 
 function GetList(name){
   let newList = sessionStorage.getItem(name);
@@ -63,18 +64,39 @@ for (let i = 0; i < createButton.length; i++) {
           {
             if(User === "sara.nur" && org === "HCI" && proj === "Project #1" ){
               let newList = GetList("Project1Tasks");
-              let newObj= {name:Name.value, progress:0, priority: "Medium", asignee: "sara.nur"}//To do
+              let newObj= {name:Name.value, progress:0, priority: "Medium", asignee: "sara.nur", subtasks:[]}//To do
               newList.push(newObj);
               StringifyList("Project1Tasks",newList);
             }else{
               let newList = GetList("NewTasks"); 
-              let newObj= {name:Name.value, progress:0, priority: "Medium", asignee: "sara.nur"}//To do
+              let newObj= {name:Name.value, progress:0, priority: "Medium", asignee: "sara.nur",  subtasks:[]}//To do
               newList.push(newObj);
               StringifyList("NewTasks",newList);
             }
           }
         
-        
+          if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Create New Subtask")
+            {
+              if(User === "sara.nur" && org === "HCI" && proj === "Project #1" ){
+                let newList = GetList("Project1Tasks");
+                let newObj= {name:Name.value, progress:0, priority: "Medium", asignee: "sara.nur", finished: false}//To do
+                for(let i = 0; i < newList.length; i++){
+                  if(newList[i].name === task){
+                    newList[i].subtasks.push(newObj);
+                  }
+                }
+                StringifyList("Project1Tasks",newList);
+              }else{
+                let newList = GetList("NewTasks"); 
+                let newObj= {name:Name.value, progress:0, priority: "Medium", asignee: "sara.nur",  finished: false}//To do
+                for(let i = 0; i < newList.length; i++){
+                  if(newList[i].name === task){
+                    newList[i].subtasks.push(newObj);
+                  }
+                }
+                StringifyList("NewTasks",newList);
+              }
+            }
 
 
       modal[i].style.display = "none";
