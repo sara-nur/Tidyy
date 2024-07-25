@@ -29,6 +29,8 @@ if(User === "sara.nur"){
     }else{
         taskList = GetList("NewTasks");
     }
+}else{
+  taskList = GetList("NewTasks");
 }
 
 console.log(taskList);

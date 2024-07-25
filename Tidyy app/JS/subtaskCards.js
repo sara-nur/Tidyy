@@ -18,8 +18,6 @@ function GetList(name){
 }
 
 
-console.log(sessionStorage.getItem("Project1Tasks"));
-
 
 
 if(User === "sara.nur"){
@@ -33,6 +31,8 @@ if(User === "sara.nur"){
     }else{
         taskList = GetList("NewTasks");
     }
+}else{
+    taskList = GetList("NewTasks");
 }
 
 console.log(taskList);
