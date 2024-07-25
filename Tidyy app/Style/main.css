@@ -7,6 +7,7 @@
   --BANNERCOLORSECOND: #537f96;
   --BACKCOLORFRONTPAGE: papayawhip;
   --HIGHLIGHTCOLOR: #0e3f57; /* HOVER COLOR */
+  --HIGHLIGHTEDBUTTONCOLOR: #1d4b62;
   --BACKCOLOR: #f5f5f5;
   --DROPDOWNHIGHLIGHTCOLOR: #d7d6d6;
   --MODALBORDERCOLOR: rgba(108, 162, 187, 0.7);
@@ -544,9 +545,6 @@ aside {
   color: var(--TXTCOLOR);
 }
 
-.highlightButton {
-  background-color: red;
-}
 /* BANNER - OPEN */
 
 /*MAIN BODY ORGANIZATION PAGE - OPEN*/
@@ -816,3 +814,11 @@ aside {
   justify-content: center;
 }
 /*INTRO JS CLOSE*/
+
+/*ACTIVE AND INACTIVE BUTTONS OPEN*/
+.active-button {
+  background-color: var(--HIGHLIGHTEDBUTTONCOLOR) !important;
+  border: 3px groove var(--FIRSTGRCOLOR);
+}
+
+/*ACTIVE AND INACTIVE BUTTONS CLOSE*/
