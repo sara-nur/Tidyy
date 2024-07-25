@@ -4,6 +4,13 @@ let NewListOrg = [];
 let HCIListProjects = ["Project #1", "Project #2", "Project #3"];
 let NewListProjects = [];
 
+let Teams = [{teamName: "Dev", members: 
+  [{name: "sara.nur"},{name: "ado"},{name: "jason"},]},
+  {teamName: "UI", members:
+  [{name: "eve"},{name: "aladin"},{name: "monica"}]
+  }]
+
+
 let Project1Task = [
   {
     name: "task #1",
@@ -309,3 +316,4 @@ StringifyList("saraOrg", SaraListOrg);
 StringifyList("newOrg", NewListOrg);
 StringifyList("Project1Tasks", Project1Task);
 StringifyList("NewTasks", NewTasks);
+StringifyList("TeamList", Teams)
