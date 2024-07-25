@@ -40,7 +40,6 @@ for (let i = 0; i < taskList.length; i++) {
     toDO.innerHTML += `<div class="card">
               <div class="card-header">
                 <h3>${taskList[i].name}</h3>
-                <img src="../Img/virus.png" alt="" />
               </div>
               <p>Priority: ${taskList[i].priority}</p>
               <p>Progress: ${taskList[i].progress}%</p>
@@ -52,7 +51,6 @@ for (let i = 0; i < taskList.length; i++) {
     inProgress.innerHTML += `<div class="card">
               <div class="card-header">
                 <h3>${taskList[i].name}</h3>
-                <img src="../Img/virus.png" alt="" />
               </div>
               <p>Priority: ${taskList[i].priority}</p>
               <p>Progress: ${taskList[i].progress}%</p>

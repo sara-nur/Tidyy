@@ -54,7 +54,8 @@ if (allTasks != null && myTasks != null) {
     setButtonState(myTasks);
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
       if (
-        cards[i].getElementsByTagName("p")[2].innerHTML !== `Asignee: ${User}`
+        cards[i].getElementsByTagName("p")[2].innerHTML !==
+        `Asigneed Team: ${Team}`
       ) {
         cards[i].style.display = "none";
       }
