@@ -8,21 +8,28 @@ function GetList(name) {
 
 const teams = GetList("TeamList");
 
-console.log(teams);
 
-const teamNumber = teams.length;
 
-const memberNumber= getMemberNumber();
 
-function getMemberNumber(){
-    let number = 0;
-    for(let i = 0; i < teams.length; i++){
-        console.log(teams[i])
-        number+= teams[i].members.length;
+const counters = document.querySelectorAll(".team-counter")
+
+
+for(let i = 0; i < counters.length; i++ ){
+    console.log(counters[i].innerHTML)
+    if(i == 0){
+        counters[i].innerHTML= `<p>Number of Members : ${teams.length}</p>`;
     }
-    return number;
 }
 
 
-console.log(teamNumber);
-console.log(memberNumber);
+cards.innerHTML = ""
+console.log(teams.length)
+for(let i = 0; i < teams.length; i++){
+    cards.innerHTML +=
+    `
+        <div class="team-card" id="teamBtn" >
+            <p>${teams[i].teamName}</p>
+            <p>${teams[i].members.length}</p>
+          </div>
+    `
+}
