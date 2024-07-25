@@ -9,7 +9,7 @@ let Project1Task = [
     name: "task #1",
     priority: "High",
     progress: 20,
-    asignee: "sara.nur",
+    asigneedTeam: "Dev",
     subtasks: [
       {
         name: "sub-task #1",
@@ -66,7 +66,7 @@ let Project1Task = [
     name: "task #2",
     priority: "Low",
     progress: 100,
-    asignee: "sara.nur",
+    asigneedTeam: "UI",
     subtasks: [
       {
         name: "sub-task #1",
@@ -123,7 +123,7 @@ let Project1Task = [
     name: "task #3",
     priority: "Medium",
     progress: 80,
-    asignee: "ado",
+    asigneedTeam: "Dev",
     subtasks: [
       {
         name: "sub-task #1",
@@ -164,7 +164,7 @@ let Project1Task = [
     name: "task #4",
     priority: "Low",
     progress: 0,
-    asignee: "ado",
+    asigneedTeam: "UI",
     subtasks: [
       {
         name: "sub-task #1",
@@ -205,7 +205,7 @@ let Project1Task = [
     name: "task #5",
     priority: "High",
     progress: 50,
-    asignee: "sara.nur",
+    asigneedTeam: "Dev",
     subtasks: [
       {
         name: "sub-task #1",
@@ -246,7 +246,7 @@ let Project1Task = [
     name: "task #6",
     priority: "High",
     progress: 10,
-    asignee: "ado",
+    asigneedTeam: "Dev",
     subtasks: [
       {
         name: "sub-task #1",
@@ -278,7 +278,6 @@ let Project1Task = [
         progress: 0,
         asignee: "ado",
         finished: true,
-        description: "Fix certain parts",
       },
     ],
   },
