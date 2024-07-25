@@ -18,7 +18,7 @@
       </span>
       <figure id="profileOptions">
         <img class="header-profile-picture" src="../Img/man.png" alt="" />
-        <p>John Doe</p>
+        <p id="userName">John Doe</p>
       </figure>
       <section class="profile-options-dropdown" id="proflieDropDown">
         <ul>
@@ -36,8 +36,9 @@
               <h2 id="banner-subtask">Subtask #1</h2>
             </figure>
             <p>
-              <a href="orgainsation-screen.html" id="banner-org">Test organistaion #1</a>/
-               <a href="projects-screen.html" id="banner-proj">Project #1</a>/
+              <a href="orgainsation-screen.html" id="banner-org"
+                >Test organistaion #1</a
+              >/ <a href="projects-screen.html" id="banner-proj">Project #1</a>/
               <a href="my-subtasks-screen.html" id="banner-task">Task #1</a>
             </p>
           </div>
@@ -47,9 +48,8 @@
           </div>
         </div>
 
-        <div class="subtask-overview">
-          <p>Subtask title</p>
-          <textarea></textarea>
+        <div class="card-layout">
+          <div class="subtask-overview-card"></div>
         </div>
       </section>
 
@@ -89,7 +89,7 @@
             </ul>
           </div>
 
-          <a class="a-tag-button" href="calendar-screen.html"">Calendar</a>
+          <a class="a-tag-button" href="calendar-screen.html">Calendar</a>
           <a class="a-tag-button" href="teams-screen.html">Teams</a>
         </div>
       </aside>
@@ -155,7 +155,8 @@
   </body>
   <script src="../JS/sidebar.js" type="module"></script>
   <script src="../JS/modal.js" type="module"></script>
-  <script src="../JS/intro.js" type="module"></script>
   <script src="../JS/userInformation.js" type="module"></script>
   <script src="../JS/bannerInfo.js" type="module"></script>
+  <script src="../JS/cardClickSubtasks.js" type="module"></script>
+  <script src="../JS/subtaskOverview.js" type="module"></script>
 </html>
