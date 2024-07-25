@@ -607,6 +607,29 @@ aside {
 
 /* PROGRES COLUMNS - CLOSE */
 
+/*SUBTASK OVERVIEW CARD - OPEN*/
+.subtask-overview-card {
+  background-color: var(--FIRSTGRCOLOR);
+  border-radius: 0.7rem;
+  padding: 3rem 6rem;
+  margin: 3rem 0.5rem;
+  font-size: large;
+  width: 40%;
+}
+
+.subtask-overview-card h3 {
+  font-size: large;
+  color: var(--TXTCOLOR);
+  font-size: x-large;
+  padding-bottom: 1rem;
+}
+
+.subtask-overview-card p {
+  padding: 0.3rem;
+  font-size: large;
+}
+/*SUBTASK OVERVIEW CARD - CLOSE*/
+
 /* CARD - OPEN */
 
 .card {
