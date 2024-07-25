@@ -35,50 +35,71 @@ const inProgress = document.getElementById("in-progress-column");
 const review = document.getElementById("code-review");
 const done = document.getElementById("done-column");
 
+function createCardHTML(task) {
+  return `
+  <div class="card" data-id=${task.id}>
+    <div class="card-header">
+        <h3>${task.name}</h3>
+      </div>
+        <p>Priority: ${task.priority}</p>
+        <p>Progress: ${task.progress}%</p>
+        <p>Asigneed Team: ${task.asigneedTeam}</p>
+    </div>`;
+}
+
 for (let i = 0; i < taskList.length; i++) {
   if (taskList[i].progress === 0) {
-    toDO.innerHTML += `<div class="card">
-              <div class="card-header">
-                <h3>${taskList[i].name}</h3>
-              </div>
-              <p>Priority: ${taskList[i].priority}</p>
-              <p>Progress: ${taskList[i].progress}%</p>
-              <p>Asigneed Team: ${taskList[i].asigneedTeam}</p>
-            </div>`;
+    toDO.innerHTML += createCardHTML(taskList[i]);
   }
 
   if (taskList[i].progress >= 1 && taskList[i].progress <= 74) {
-    inProgress.innerHTML += `<div class="card">
-              <div class="card-header">
-                <h3>${taskList[i].name}</h3>
-              </div>
-              <p>Priority: ${taskList[i].priority}</p>
-              <p>Progress: ${taskList[i].progress}%</p>
-              <p>Asigneed Team: ${taskList[i].asigneedTeam}</p>
-            </div>`;
+    inProgress.innerHTML += createCardHTML(taskList[i]);
   }
 
   if (taskList[i].progress >= 75 && taskList[i].progress <= 94) {
-    review.innerHTML += `<div class="card">
-              <div class="card-header">
-                <h3>${taskList[i].name}</h3>
-                <img src="../Img/virus.png" alt="" />
-              </div>
-              <p>Priority: ${taskList[i].priority}</p>
-              <p>Progress: ${taskList[i].progress}%</p>
-              <p>Asigneed Team: ${taskList[i].asigneedTeam}</p>
-            </div>`;
+    review.innerHTML += createCardHTML(taskList[i]);
   }
 
   if (taskList[i].progress === 100) {
-    done.innerHTML += `<div class="card">
-              <div class="card-header">
-                <h3>${taskList[i].name}</h3>
-                <img src="../Img/virus.png" alt="" />
-              </div>
-              <p>Priority: ${taskList[i].priority}</p>
-              <p>Progress: ${taskList[i].progress}%</p>
-              <p>Asigneed Team: ${taskList[i].asigneedTeam}</p>
-            </div>`;
+    done.innerHTML += createCardHTML(taskList[i]);
   }
+}
+
+const columns = [toDO, inProgress, review, done];
+columns.forEach((columm) => {
+  new Sortable(columm, {
+    group: "tasks",
+    animation: 150,
+    onEnd: function (evt) {
+      const itemEl = evt.item;
+      const newProgress = getNewProgress(evt.to.id);
+      const taskId = itemEl.getAtribute("data-id");
+      updateTaskProgress(taskId, newProgress);
+    },
+  });
+});
+
+function getNewProgress(colummId) {
+  switch (colummId) {
+    case "to-do-column":
+      return 0;
+    case "in-progress-column":
+      return 1;
+    case "code-review":
+      return 75;
+    case "done-column":
+      return 100;
+    default:
+      return 0;
+  }
+}
+
+function updateTaskProgress(taskId, newProgress) {
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == taskId) {
+      taskList[i].progress = mewProgress;
+      break;
+    }
+  }
+  StringifyList("ProjectTasks", taskList);
 }
