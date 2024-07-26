@@ -42,7 +42,7 @@ if (allTasks != null && myTasks != null) {
     setButtonState(allTasks);
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
       if (
-        cards[i].getElementsByTagName("p")[2].innerHTML !== `Asignee: ${User}`
+        cards[i].getElementsByTagName("p")[2].innerHTML !== `Assignee: ${User}`
       ) {
         cards[i].style.display = "block";
       }
@@ -54,8 +54,9 @@ if (allTasks != null && myTasks != null) {
     setButtonState(myTasks);
     for (let i = 0; i < document.getElementsByClassName("card").length; i++) {
       if (
-        cards[i].getElementsByTagName("p")[2].innerHTML !== `Asignee: ${User}`
+        cards[i].getElementsByTagName("p")[2].innerHTML !== `Assignee: ${User}`
       ) {
+        console.log(`Asignee: ${User}`);
         cards[i].style.display = "none";
       }
     }
