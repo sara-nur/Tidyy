@@ -98,6 +98,10 @@ for (let i = 0; i < createButton.length; i++) {
               }
             }
 
+            if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Add New Member"){
+                
+              }
+
 
       modal[i].style.display = "none";
       console.log(Name.value);

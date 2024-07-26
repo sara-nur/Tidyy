@@ -7,11 +7,19 @@ let NewListProjects = [];
 let Teams = [
   {
     teamName: "Dev",
-    members: [{ name: "sara.nur" }, { name: "ado" }, { name: "jason" }],
+    members: [
+      { name: "sara.nur", email: "sara.nur@gmail.com" },
+      { name: "ado", email: "ado@gmail.com" },
+      { name: "jason", email: "jason@gmail.com" },
+    ],
   },
   {
     teamName: "UI",
-    members: [{ name: "eve" }, { name: "aladin" }, { name: "monica" }],
+    members: [
+      { name: "eve", email: "eve@gmail.com" },
+      { name: "aladin", email: "aladin@gmail.com" },
+      { name: "monica", email: "monica" },
+    ],
   },
 ];
 

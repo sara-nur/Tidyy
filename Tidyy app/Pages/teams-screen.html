@@ -41,7 +41,7 @@
           </div>
           <div class="banner-buttons organisation">
             <button id="createButton" class="create-btn">New team +</button>
-            <button id="Member" class="create-btn">Add Team Member</button>
+            <button id="Member" class="create-btn">Add Member +</button>
           </div>
         </div>
         <div class="team-info">
@@ -117,17 +117,10 @@
               name="team-name"
               placeholder="Team"
             />
+    
             <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="modalddl">Type⌵</p>
-              <ul class="modal-dropdown-list-content" id="modalcontentddl">
-                <li>Dev</li>
-                <li>UI</li>
-              </ul>
-            </div>
-
-            <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="modalddl2">Members⌵</p>
-              <ul class="modal-dropdown-list-content" id="modalcontentddl2">
+              <p class="p-dropdown-modal" id="memberModal">Members⌵</p>
+              <ul class="modal-dropdown-list-content" id="memberContent">
                 <li>Sara</li>
                 <li>Admir</li>
               </ul>
@@ -151,10 +144,11 @@
         <section class="input-box">
           <h2>Add New Member</h2>
           <form>
-            <input type="text" id="id" name="id" placeholder="Name/Id/E-mail" />
+            <input type="text" id="MemberName" name="name" placeholder="Name" />
+            <input type="text" id="MemberEmail" name="email" placeholder="E-mail" />
             <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="modalddl3">Team Name ⌵</p>
-              <ul class="modal-dropdown-list-content" id="modalcontentddl3">
+              <p class="p-dropdown-modal" id="teamModal">Team⌵</p>
+              <ul class="modal-dropdown-list-content" id="teamContent">
                 <li>Team #1</li>
                 <li>Team #2</li>
               </ul>

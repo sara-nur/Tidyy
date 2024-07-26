@@ -711,7 +711,9 @@ aside {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 1rem;
 }
+
 
 .team-card p {
   padding: 15px;
@@ -775,7 +777,12 @@ aside {
 
 .team-info {
   display: flex;
-  flex-direction: column;
+}
+
+.team-info p, .team-counter p{
+  border-bottom: 1px solid black;
+  text-wrap: nowrap;
+  padding: 0.5rem;
 }
 /* TEAM BANNER - CLOSE */
 /*CALENDAR OPEN*/
