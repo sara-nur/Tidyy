@@ -44,3 +44,15 @@ for(let i = 0; i < teams.length; i++){
           </div>
     `
 }
+
+
+
+const memberModal = document.getElementById("memberModal");
+const memberContent = document.getElementById("memberContent");
+
+console.log(memberModal);
+console.log(memberContent);
+
+memberModal.addEventListener("click", ()=>{
+    memberContent.classList.toggle("show");
+})

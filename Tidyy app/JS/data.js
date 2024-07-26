@@ -5,10 +5,17 @@ let HCIListProjects = ["Project #1", "Project #2", "Project #3"];
 let NewListProjects = [];
 
 let Teams = [{teamName: "Dev", members: 
-  [{name: "sara.nur"},{name: "ado"},{name: "jason"},]},
+  [
+    {name: "sara.nur", email:"sara.nur@gmail.com"},
+    {name: "ado",email: "ado@gmail.com"},
+    {name: "jason", email: "jason@gmail.com"},
+  ]},
   {teamName: "UI", members:
-  [{name: "eve"},{name: "aladin"},{name: "monica"}]
-  }]
+  [
+    {name: "eve",email:"eve@gmail.com"},
+    {name: "aladin",email:"aladin@gmail.com"},
+    {name: "monica",email: "monica"}
+  ]}]
 
 
 let Project1Task = [
