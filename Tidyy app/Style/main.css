@@ -780,9 +780,12 @@ aside {
 }
 
 .team-info p, .team-counter p{
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: var(--HIGHLIGHTEDBUTTONCOLOR);
+  color: whitesmoke;
   text-wrap: nowrap;
-  padding: 0.5rem;
+  padding: 0.75rem;
 }
 /* TEAM BANNER - CLOSE */
 /*CALENDAR OPEN*/

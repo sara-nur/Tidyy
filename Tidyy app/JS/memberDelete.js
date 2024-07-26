@@ -23,23 +23,25 @@ for(let i = 0; i < users.length; i++){
         
         if(e.target.tagName === "svg"){
             if(confirm("are you sure you want to delete this user")){
-                DeleteUser(users[i].getElementsByTagName("p")[0].innerHTML);
+                DeleteUser();
             }
         }
     })
 }
 
-function DeleteUser(userName){
+
+function DeleteUser(){
+    console.log(team);
     for(let i = 0; i < list.length; i++){
-        
-        for(let j = 0; j < list[i].members.length; j++){
-            if(userName !== list[i].members[j].name){
-                list[i].members.pop();
-                StringifyList("TeamList", list);
-                window.location.reload();
-            }
+        if(list[i].teamName === team){
+            console.log(list[i]);
+            list[i].members.pop();
+
         }
+        
     }
+    StringifyList("TeamList", list);
+    window.location.reload();
 }
 
 
