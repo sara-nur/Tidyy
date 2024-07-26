@@ -73,7 +73,7 @@ columns.forEach((columm) => {
     onEnd: function (evt) {
       const itemEl = evt.item;
       const newProgress = getNewProgress(evt.to.id);
-      const taskId = itemEl.getAtribute("data-id");
+      const taskId = itemEl.getAttribute("data-id");
       updateTaskProgress(taskId, newProgress);
     },
   });

@@ -5,9 +5,7 @@ const proj = sessionStorage.getItem("proj");
 const task = sessionStorage.getItem("task");
 
 function StringifyList(name, list) {
-  console.log(list);
   let newList = JSON.stringify(list);
-  console.log(newList);
   sessionStorage.setItem(name, newList);
 }
 
@@ -20,7 +18,6 @@ function GetList(name) {
 if (User === "sara.nur") {
   if (org === "HCI") {
     if (proj === "Project #1") {
-      ////////// MJENJAJ
       taskList = GetList("Project1Tasks");
     } else {
       taskList = GetList("NewTasks");
@@ -32,13 +29,10 @@ if (User === "sara.nur") {
   taskList = GetList("NewTasks");
 }
 
-console.log(taskList);
 const toDO = document.getElementById("to-do-column");
 const inProgress = document.getElementById("in-progress-column");
 const review = document.getElementById("code-review");
 const done = document.getElementById("done-column");
-
-console.log(taskList.length);
 
 let subtaskList;
 
@@ -50,31 +44,31 @@ for (let i = 0; i < taskList.length; i++) {
 
 function createCardHTML(task) {
   return `
-    <div class="card" data-id="${task.id}">
+    <div class="card" data-id="${task.id}" data-task-id="${task.taskId}">
       <div class="card-header">
         <h3>${task.name}</h3>
       </div>
-      <p>Priority: ${task.priority}</p>
-      <p>Progress: ${task.progress}%</p>
-      <p>Asignee: ${task.asignee}</p>
+      <p class="priority">Priority: ${task.priority}</p>
+      <p class="progress">Progress: ${task.progress}%</p>
+      <p class="assignee">Assignee: ${task.asignee}</p>
     </div>`;
 }
 
 for (let i = 0; i < subtaskList.length; i++) {
-  if (subtaskList[i].progress === 0) {
-    toDO.innerHTML += createCardHTML(subtaskList[i]);
+  let columnElement;
+  const subtask = subtaskList[i];
+  if (subtask.progress === 0) {
+    columnElement = toDO;
+  } else if (subtask.progress >= 1 && subtask.progress <= 74) {
+    columnElement = inProgress;
+  } else if (subtask.progress >= 75 && subtask.progress <= 94) {
+    columnElement = review;
+  } else if (subtask.progress === 100) {
+    columnElement = done;
   }
 
-  if (subtaskList[i].progress >= 1 && subtaskList[i].progress <= 74) {
-    inProgress.innerHTML += createCardHTML(subtaskList[i]);
-  }
-
-  if (subtaskList[i].progress >= 75 && subtaskList[i].progress <= 94) {
-    review.innerHTML += createCardHTML(subtaskList[i]);
-  }
-
-  if (subtaskList[i].progress === 100) {
-    done.innerHTML += createCardHTML(subtaskList[i]);
+  if (columnElement) {
+    columnElement.innerHTML += createCardHTML(subtask);
   }
 }
 
@@ -86,18 +80,42 @@ columns.forEach((column) => {
     onEnd: function (evt) {
       const itemEl = evt.item;
       const newProgress = getNewProgress(evt.to.id);
-      const taskId = itemEl.getAttribute("data-id");
-      updateTaskProgress(taskId, newProgress);
+      const subtaskId = itemEl.getAttribute("data-id");
+      const taskId = itemEl.getAttribute("data-task-id");
+
+      updateSubtaskProgress(subtaskId, newProgress);
+      updateTaskProgress(taskId);
+
+      updateCardDisplay(itemEl, newProgress);
+
+      saveCardState(itemEl, evt.to.id);
     },
   });
 });
+
+function saveCardState(cardElement, columnId) {
+  const cardId = cardElement.getAttribute("data-id");
+  const cardState = {
+    columnId: columnId,
+    progress: getNewProgress(columnId),
+  };
+
+  sessionStorage.setItem(`card-${cardId}`, JSON.stringify(cardState));
+}
+
+function updateCardDisplay(cardElement, progress) {
+  const progressElement = cardElement.querySelector(".progress");
+  if (progressElement) {
+    progressElement.innerText = `Progress: ${progress}%`;
+  }
+}
 
 function getNewProgress(columnId) {
   switch (columnId) {
     case "to-do-column":
       return 0;
     case "in-progress-column":
-      return 1;
+      return 25;
     case "code-review":
       return 75;
     case "done-column":
@@ -107,12 +125,28 @@ function getNewProgress(columnId) {
   }
 }
 
-function updateTaskProgress(taskId, newProgress) {
+function updateSubtaskProgress(subtaskId, newProgress) {
   for (let i = 0; i < subtaskList.length; i++) {
-    if (subtaskList[i].id == taskId) {
+    if (subtaskList[i].id === subtaskId) {
       subtaskList[i].progress = newProgress;
       break;
     }
   }
-  StringifyList("Project1Tasks", taskList); // Update the list in sessionStorage
+  StringifyList("Project1Tasks", taskList);
+}
+
+function updateTaskProgress(taskId) {
+  let task = taskList.find((task) => task.id === taskId);
+  if (!task) return;
+
+  let totalSubtasks = task.subtasks.length;
+  if (totalSubtasks === 0) return;
+
+  let completedSubtasks = task.subtasks.filter(
+    (subtask) => subtask.progress === 100
+  ).length;
+  let taskProgress = (completedSubtasks / totalSubtasks) * 100;
+
+  task.progress = taskProgress;
+  StringifyList("Project1Tasks", taskList);
 }
