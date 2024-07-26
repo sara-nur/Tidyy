@@ -29,7 +29,8 @@ const errPasswordIncorrect = document.getElementById(
 //VARIABLES FROM BUTTON FIELDS
 const loginBtn = document.getElementById("loginbtn");
 const registerBtn = document.getElementById("RegisterModalbtn");
-
+const reg = document.getElementById("createButton");
+const modal = document.getElementById("createModal");
 //LISTS
 let usernamesList = ["sara.nur", "ado", "ramo"];
 let passwordsList = ["Sara1234!", "Ado1234!", "Ramo1234!"];
@@ -37,6 +38,13 @@ let emailsList = ["sara.nur@gmail.com", "ado@gmail.com", "ramo@gmail.com"];
 
 //VARIABLES
 let timeoutId;
+
+
+//OPEN MODAL
+reg.addEventListener("click", (e)=>{
+  e.preventDefault();
+  modal.style.display="block";
+} )
 
 // Function to save user data to sessionStorage
 function saveUserDataToSessionStorage() {
@@ -57,6 +65,8 @@ function retrieveUserDataFromSessionStorage() {
     emailsList = JSON.parse(sessionStorage.getItem("emailsList"));
   }
 }
+
+
 
 window.addEventListener("load", function () {
   retrieveUserDataFromSessionStorage();
