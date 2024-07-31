@@ -28,13 +28,12 @@ if (User === "sara.nur") {
   taskList = GetList("NewTasks");
 }
 
-console.log(taskList);
 const toDO = document.getElementById("to-do-column");
 const inProgress = document.getElementById("in-progress-column");
 const review = document.getElementById("code-review");
 const done = document.getElementById("done-column");
 
-let subtaskList;
+let subtaskList = [];
 
 for (let i = 0; i < taskList.length; i++) {
   if (task === taskList[i].name) {
@@ -81,9 +80,9 @@ columns.forEach((column) => {
       const newProgress = getNewProgress(evt.to.id);
       const subtaskId = itemEl.getAttribute("data-id");
       const taskId = itemEl.getAttribute("data-task-id");
+      saveColumnState();
       updateSubtaskProgress(subtaskId, newProgress);
       updateTaskProgress(taskId);
-      saveColumnState();
 
       updateCardDisplay(itemEl, newProgress);
       StringifyList("Project1Tasks", taskList);
@@ -100,7 +99,7 @@ function updateCardDisplay(cardElement, progress) {
 }
 
 function saveColumnState() {
-  const columnsState = {
+  const columnState = {
     "to-do-column": Array.from(toDO.querySelectorAll(".card")).map((card) =>
       card.getAttribute("data-id")
     ),
@@ -114,45 +113,10 @@ function saveColumnState() {
       card.getAttribute("data-id")
     ),
   };
-  sessionStorage.setItem("columnState", JSON.stringify(columnsState));
+  sessionStorage.setItem("columnState", JSON.stringify(columnState));
 }
 
 const columnState = JSON.parse(sessionStorage.getItem("columnState"));
-
-function populateColumns() {
-  toDO.querySelectorAll(".card").forEach((card) => card.remove());
-  inProgress.querySelectorAll(".card").forEach((card) => card.remove());
-  review.querySelectorAll(".card").forEach((card) => card.remove());
-  done.querySelectorAll(".card").forEach((card) => card.remove());
-
-  if (columnState) {
-    columnState["to-do-column"].forEach((id) => addCardToColumn(id, toDO));
-    columnState["in-progress-column"].forEach((id) =>
-      addCardToColumn(id, inProgress)
-    );
-    columnState["code-review"].forEach((id) => addCardToColumn(id, review));
-    columnState["done-column"].forEach((id) => addCardToColumn(id, done));
-  } else {
-    for (let i = 0; i < subtaskList.length; i++) {
-      if (subtaskList[i].progress === 0) {
-        toDO.innerHTML += createCardHTML(subtaskList[i]);
-      }
-
-      if (subtaskList[i].progress >= 1 && subtaskList[i].progress <= 74) {
-        inProgress.innerHTML += createCardHTML(subtaskList[i]);
-      }
-
-      if (subtaskList[i].progress >= 75 && subtaskList[i].progress <= 94) {
-        review.innerHTML += createCardHTML(subtaskList[i]);
-      }
-
-      if (subtaskList[i].progress === 100) {
-        done.innerHTML += createCardHTML(subtaskList[i]);
-      }
-    }
-  }
-}
-populateColumns();
 
 function addCardToColumn(taskId, column) {
   const task = subtaskList.find((t) => t.id == taskId);
@@ -183,7 +147,7 @@ function updateSubtaskProgress(subtaskId, newProgress) {
       break;
     }
   }
-  StringifyList("Project1Tasks", taskList);
+  StringifyList("Project1Tasks", subtaskList);
 }
 
 function updateTaskProgress(taskId) {

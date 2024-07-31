@@ -18,7 +18,6 @@ function GetList(name) {
 if (User === "sara.nur") {
   if (org === "HCI") {
     if (proj === "Project #1") {
-      ////////// MJENJAJ
       taskList = GetList("Project1Tasks");
     } else {
       taskList = GetList("NewTasks");
@@ -97,7 +96,7 @@ function getNewProgress(colummId) {
 function updateTaskProgress(taskId, newProgress) {
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == taskId) {
-      taskList[i].progress = mewProgress;
+      taskList[i].progress = newProgress;
       break;
     }
   }
