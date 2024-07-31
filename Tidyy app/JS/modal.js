@@ -45,6 +45,7 @@ for (let i = 0; i < createButton.length; i++) {
           newList.push(Name.value);
           StringifyList("newOrg",newList);
         }
+        alert("You successfully created an Organization");
       }
 
       if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Create New Project")
@@ -58,6 +59,7 @@ for (let i = 0; i < createButton.length; i++) {
             newList.push(Name.value);
             StringifyList("NewProject",newList);
           }
+          alert("You successfully created an Project");
         }
 
         if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Create New Task")
@@ -73,6 +75,7 @@ for (let i = 0; i < createButton.length; i++) {
               newList.push(newObj);
               StringifyList("NewTasks",newList);
             }
+            alert("You successfully created an Task");
           }
         
           if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Create New Subtask")
@@ -96,10 +99,21 @@ for (let i = 0; i < createButton.length; i++) {
                 }
                 StringifyList("NewTasks",newList);
               }
+              alert("You successfully created an Subask");
             }
 
-            if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Add New Member"){
-                
+            if(modal[i].getElementsByTagName("h2")[0].innerHTML === "Add New Team Member"){
+                const team = sessionStorage.getItem("team");
+                let teamList = GetList("TeamList");
+                const Username = Name.value.replace(" ",".");
+                let newObj = {name: Name.value,username:Username.toLowerCase(),email: Username.toLowerCase()+"@gmail.com" }
+                for(let i = 0; i < teamList.length; i++){
+                  if(teamList[i].teamName === team){
+                    teamList[i].members.push(newObj);
+                  }
+                }
+                StringifyList("TeamList",teamList);
+                alert("You successfully added an new Member");
               }
 
 
