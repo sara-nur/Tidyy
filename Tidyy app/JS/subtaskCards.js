@@ -17,7 +17,7 @@ function GetList(name) {
 if (User === "sara.nur") {
   if (org === "HCI") {
     if (proj === "Project #1") {
-      taskList = GetList("Project1Task");
+      taskList = GetList("Project1Tasks");
     } else {
       taskList = GetList("NewTasks");
     }
@@ -86,7 +86,7 @@ columns.forEach((column) => {
       saveColumnState();
 
       updateCardDisplay(itemEl, newProgress);
-      StringifyList("Project1Task", taskList);
+      StringifyList("Project1Tasks", taskList);
     },
   });
 });
@@ -96,7 +96,7 @@ function updateCardDisplay(cardElement, progress) {
   if (progressElement) {
     progressElement.innerText = `Progress: ${progress}%`;
   }
-  StringifyList("Project1Task", taskList);
+  StringifyList("Project1Tasks", taskList);
 }
 
 function saveColumnState() {
@@ -183,7 +183,7 @@ function updateSubtaskProgress(subtaskId, newProgress) {
       break;
     }
   }
-  StringifyList("Project1Task", taskList);
+  StringifyList("Project1Tasks", taskList);
 }
 
 function updateTaskProgress(taskId) {
@@ -196,9 +196,9 @@ function updateTaskProgress(taskId) {
   let completedSubtasks = task.subtasks.filter(
     (subtask) => subtask.progress === 100
   ).length;
-  let taskProgress = (completedSubtasks / totalSubtasks) * 100;
+  let taskProgress = Math.ceil((completedSubtasks / totalSubtasks) * 100);
 
   task.progress = taskProgress;
-  StringifyList("Project1Task", taskList);
-  console.log("Project1Task", taskList);
+  StringifyList("Project1Tasks", taskList);
+  console.log("Project1Tasks", taskList);
 }
