@@ -129,7 +129,7 @@
       </aside>
     </main>
 
-    <div class="modal add-new" id="createModal">
+    <div class="modal add-new" id="createModal" data-modal-type="subtaskCreation">
       <div class="background">
         <section class="input-box">
           <h2>Create New Subtask</h2>
@@ -154,8 +154,8 @@
             />
 
          
-          <div class="modal-dropdown-list">
-            <p class="p-dropdown-modal" id="priorityModal">Priority ⌵</p>
+          <div class="modal-dropdown-list" >
+            <p class="p-dropdown-modal" id="priorityModal" data-dropdown-type="priority">Priority ⌵</p>
             <ul class="modal-dropdown-list-content" id="priorityContent">
               <li data-value="Low">Low</li>
               <li data-value="Medium">Medium</li>
@@ -163,13 +163,16 @@
             </ul>
           </div>
 
-          <div class="modal-dropdown-list">
-            <p class="p-dropdown-modal" id="assigneeModal">Assignee ⌵</p>
-            <ul class="modal-dropdown-list-content" id="assigneeContent">
-              <li data-value="sara.nur">sara.nur</li>
-              <li data-value="ado">ado</li>
-            </ul>
-          </div>
+         
+<div class="modal-dropdown-list">
+  <p class="p-dropdown-modal" id="assigneeModal" data-dropdown-type="assignee">
+    Assignee ⌵
+  </p>
+  <ul class="modal-dropdown-list-content" id="assigneeContent">
+    <li data-value="sara.nur">Sara Nur</li>
+    <li data-value="ado">Ado</li>
+  </ul>
+</div>
 
             <div class="error-message-container">
               <p class="error-message">❗Fields can't be empty❗</p>

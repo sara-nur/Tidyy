@@ -24,6 +24,65 @@ function StringifyList(name, list) {
   sessionStorage.setItem(name, newList);
 }
 
+// Definiši funkciju za postavljanje dropdown-a
+function setupDropdown(triggerElement, contentElement, callback) {
+  triggerElement.addEventListener("click", () => {
+    contentElement.classList.toggle("show");
+  });
+  contentElement.querySelectorAll("li").forEach((item) => {
+    item.addEventListener("click", () => {
+      const selectedText = item.innerText;
+      callback(selectedText);
+      contentElement.classList.remove("show");
+    });
+  });
+}
+
+// Prolazak kroz sve modale
+document.querySelectorAll(".modal").forEach((modal) => {
+  const modalType = modal.getAttribute("data-modal-type");
+
+  // Prolazak kroz sve dropdown liste unutar svakog modala
+  modal.querySelectorAll(".modal-dropdown-list").forEach((dropdown) => {
+    const dropdownType = dropdown
+      .querySelector(".p-dropdown-modal")
+      .getAttribute("data-dropdown-type");
+    const triggerElement = dropdown.querySelector(".p-dropdown-modal");
+    const contentElement = dropdown.querySelector(
+      ".modal-dropdown-list-content"
+    );
+
+    // Postavi dropdown za "assignedTeam"
+    if (dropdownType === "assignedTeam") {
+      setupDropdown(triggerElement, contentElement, (selectedText) => {
+        if (modalType === "taskCreation") {
+          selectedAssignedTeam = selectedText;
+          triggerElement.innerText = selectedText + " ⌵";
+        }
+      });
+    }
+    // Postavi dropdown za "assignee" samo u modalima za kreiranje subtaskova
+    else if (dropdownType === "assignee" && modalType === "subtaskCreation") {
+      setupDropdown(triggerElement, contentElement, (selectedText) => {
+        if (modalType === "subtaskCreation") {
+          selectedAssignee = selectedText;
+          triggerElement.innerText = selectedText + " ⌵";
+        }
+      });
+    }
+    //Priority
+    else if (dropdownType === "priority") {
+      setupDropdown(triggerElement, contentElement, (selectedText) => {
+        if (modalType === "taskCreation" || modalType === "subtaskCreation") {
+          selectedPriority = selectedText;
+          triggerElement.innerText = selectedText + " ⌵";
+        }
+      });
+    }
+  });
+});
+
+/*
 // Dodavanje funkcionalnosti za prikazivanje padajućih menija i odabir opcija
 function setupDropdown(pElement, contentElement, callback) {
   pElement.addEventListener("click", () => {
@@ -47,7 +106,7 @@ setupDropdown(
   }
 );
 
-/*
+
 setupDropdown(
   document.getElementById("assigneeModal"),
   document.getElementById("assigneeContent"),
@@ -56,7 +115,7 @@ setupDropdown(
     document.getElementById("assigneeModal").innerText = selectedText + " ⌵";
   }
 );
-*/
+
 setupDropdown(
   document.getElementById("assignedTeamModal"),
   document.getElementById("assignedTeamContent"),
@@ -66,6 +125,7 @@ setupDropdown(
       selectedText + " ⌵";
   }
 );
+*/
 
 for (let i = 0; i < createButton.length; i++) {
   createButton[i].addEventListener("click", (e) => {

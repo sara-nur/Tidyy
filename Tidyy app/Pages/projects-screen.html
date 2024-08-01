@@ -141,7 +141,7 @@
       </aside>
     </main>
 
-    <div class="modal new-task" id="createModal">
+    <div class="modal new-task" id="createModal" data-modal-type="taskCreation">
       <div class="background">
         <section class="input-box">
           <h2>Create New Task</h2>
@@ -166,7 +166,13 @@
             />
 
             <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="priorityModal">Priority ⌵</p>
+              <p
+                class="p-dropdown-modal"
+                id="priorityModal"
+                data-dropdown-type="priority"
+              >
+                Priority ⌵
+              </p>
               <ul class="modal-dropdown-list-content" id="priorityContent">
                 <li data-value="Low">Low</li>
                 <li data-value="Medium">Medium</li>
@@ -175,7 +181,13 @@
             </div>
 
             <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="assignedTeamModal">Assignee ⌵</p>
+              <p
+                class="p-dropdown-modal"
+                id="assignedTeamModal"
+                data-dropdown-type="assignedTeam"
+              >
+                Assigned Team ⌵
+              </p>
               <ul class="modal-dropdown-list-content" id="assignedTeamContent">
                 <li data-value="Dev">Dev</li>
                 <li data-value="UI">UI</li>
