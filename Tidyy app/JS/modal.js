@@ -10,6 +10,8 @@ const task = sessionStorage.getItem("task");
 let selectedPriority = "Medium"; // Default
 let selectedAssignee = "sara.nur"; // Default
 let selectedAssignedTeam = "Dev"; //Default
+let selectedMember = "Ado"; //Default
+let selectedTeam = "Dev";
 
 function GetList(name) {
   let newList = sessionStorage.getItem(name);
@@ -70,6 +72,15 @@ document.querySelectorAll(".modal").forEach((modal) => {
         }
       });
     }
+    //Members
+    else if (dropdownType === "members" && modalType === "teamCreation") {
+      setupDropdown(triggerElement, contentElement, (selectedText) => {
+        if (modalType === "teamCreation") {
+          selectedMember = selectedText;
+          triggerElement.innerText = selectedText + " ⌵";
+        }
+      });
+    }
     //Priority
     else if (dropdownType === "priority") {
       setupDropdown(triggerElement, contentElement, (selectedText) => {
@@ -82,50 +93,6 @@ document.querySelectorAll(".modal").forEach((modal) => {
   });
 });
 
-/*
-// Dodavanje funkcionalnosti za prikazivanje padajućih menija i odabir opcija
-function setupDropdown(pElement, contentElement, callback) {
-  pElement.addEventListener("click", () => {
-    contentElement.classList.toggle("show");
-  });
-  contentElement.querySelectorAll("li").forEach((item) => {
-    item.addEventListener("click", () => {
-      const selectedText = item.innerText;
-      callback(selectedText);
-      contentElement.classList.remove("show");
-    });
-  });
-}
-// Postavljanje prioritet i assignee dropdown funkcionalnosti
-setupDropdown(
-  document.getElementById("priorityModal"),
-  document.getElementById("priorityContent"),
-  (selectedText) => {
-    selectedPriority = selectedText;
-    document.getElementById("priorityModal").innerText = selectedText + " ⌵";
-  }
-);
-
-
-setupDropdown(
-  document.getElementById("assigneeModal"),
-  document.getElementById("assigneeContent"),
-  (selectedText) => {
-    selectedAssignee = selectedText;
-    document.getElementById("assigneeModal").innerText = selectedText + " ⌵";
-  }
-);
-
-setupDropdown(
-  document.getElementById("assignedTeamModal"),
-  document.getElementById("assignedTeamContent"),
-  (selectedText) => {
-    selectedAssignedTeam = selectedText;
-    document.getElementById("assignedTeamModal").innerText =
-      selectedText + " ⌵";
-  }
-);
-*/
 
 for (let i = 0; i < createButton.length; i++) {
   createButton[i].addEventListener("click", (e) => {
@@ -255,6 +222,21 @@ for (let i = 0; i < createButton.length; i++) {
         }
         StringifyList("TeamList", teamList);
         alert("You successfully added an new Member");
+      }
+   
+      if (
+        modal[i].getElementsByTagName("h2")[0].innerHTML ===
+        "Create New Team"
+      ){
+        let teamList = GetList("TeamList");
+        console.log("teamList:",teamList);
+        let newObj = {
+          teamName: Name.value,
+          members: [{name: selectedMember, username: selectedMember.replace(" ","."), email: selectedMember.replace(" ",".")+"@gmail.com"}]
+        }
+        teamList.push(newObj);
+        StringifyList("TeamList", teamList);
+        alert("You successfully created a new Team");
       }
 
       modal[i].style.display = "none";

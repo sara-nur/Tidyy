@@ -41,7 +41,6 @@
           </div>
           <div class="banner-buttons organisation">
             <button id="createButton" class="create-btn">New team +</button>
-            <button id="Member" class="create-btn">Add Member +</button>
           </div>
         </div>
         <div class="team-info">
@@ -106,23 +105,23 @@
       </aside>
     </main>
 
-    <div class="modal add-new" id="createModal">
+    <div class="modal add-new" id="createModal" data-modal-type="teamCreation">
       <div class="background">
         <section class="input-box">
-          <h2>Create new team</h2>
+          <h2>Create New Team</h2>
           <form>
             <input
               type="text"
-              id="team-name"
+              id="Name"
               name="team-name"
               placeholder="Team"
             />
     
             <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="memberModal">Members⌵</p>
+              <p class="p-dropdown-modal" id="memberModal" data-dropdown-type ="members">Members⌵</p>
               <ul class="modal-dropdown-list-content" id="memberContent">
-                <li>Sara</li>
-                <li>Admir</li>
+                <li data-value = "sara.nur">Sara Nur</li>
+                <li data-value = "ado">Ado</li>
               </ul>
             </div>
 
@@ -139,30 +138,6 @@
       </div>
     </div>
 
-    <div class="modal add-new">
-      <div class="background">
-        <section class="input-box">
-          <h2>Add New Member</h2>
-          <form>
-            <input type="text" id="MemberName" name="name" placeholder="Name" />
-            <input type="text" id="MemberEmail" name="email" placeholder="E-mail" />
-            <div class="modal-dropdown-list">
-              <p class="p-dropdown-modal" id="teamModal">Team⌵</p>
-              <ul class="modal-dropdown-list-content" id="teamContent">
-                <li>Team #1</li>
-                <li>Team #2</li>
-              </ul>
-            </div>
-            <div class="error-message-container">
-              <p class="error-message">❗Fields can't be empty❗</p>
-            </div>
-
-            <button class="create-button">Add</button>
-            <button class="cancel-button" id="CancelBtn">Cancel</button>
-          </form>
-        </section>
-      </div>
-    </div>
   </body>
   <script src="../JS/sidebar.js" type="module"></script>
   <script src="../JS/modal.js" type="module"></script>
