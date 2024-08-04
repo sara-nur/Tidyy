@@ -8,17 +8,17 @@ let Teams = [
   {
     teamName: "Dev",
     members: [
-      { name: "sara nur ", username: "sara.nur", email: "sara.nur@gmail.com" },
-      { name: "ado pasa ", username: "ado", email: "ado@gmail.com" },
-      { name: "jason voorhees ", username: "jason", email: "jason@gmail.com" },
+      { name: "Sara Nur", username: "sara.nur", email: "sara.nur@gmail.com" },
+      { name: "Admir Pasic", username: "ado", email: "ado@gmail.com" },
+      { name: "Jason Voorhees ", username: "jason", email: "jason@gmail.com" },
     ],
   },
   {
     teamName: "UI",
     members: [
-      { name: "eve ", username: "eve", email: "eve@gmail.com" },
-      { name: "eve ", username: "aladin", email: "aladin@gmail.com" },
-      { name: "eve ", username: "monica", email: "monica" },
+      { name: "Eve Eve", username: "eve", email: "eve@gmail.com" },
+      { name: "Aladin Aladin", username: "aladin", email: "aladin@gmail.com" },
+      { name: "Monica Geller ", username: "monica", email: "monica" },
     ],
   },
 ];
