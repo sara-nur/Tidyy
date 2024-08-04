@@ -18,25 +18,30 @@ console.log(list);
 console.log(users);
 
 for (let i = 0; i < users.length; i++) {
-  users[i].addEventListener("click", (e)=>{
-  if(e.target.tagName === "svg"){
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire({
-          title: "Deleted!",
-          text: "Your file has been deleted.",
-          icon: "success"
-        });
-        DeleteUser();
-}})}})}
+  users[i].addEventListener("click", (e) => {
+    if (e.target.tagName === "svg") {
+      Swal.fire({
+        title: "Are you sure you want to delete this user?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "You've successfully deleted this user",
+            icon: "success",
+            showConfirmButton: false,
+          });
+          DeleteUser();
+        }
+      });
+    }
+  });
+}
 
 function DeleteUser() {
   console.log(team);
@@ -49,5 +54,5 @@ function DeleteUser() {
   StringifyList("TeamList", list);
   setTimeout(function () {
     window.location.reload();
-  }, 1000);
+  }, 1500);
 }

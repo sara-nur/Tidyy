@@ -470,6 +470,9 @@ aside {
   font-size: 1rem;
   font-weight: bolder;
 }
+.login-header h1 {
+  color: var(--TXTCOLOR);
+}
 
 .login-body {
   background-color: var(--BACKCOLORFRONTPAGE);
