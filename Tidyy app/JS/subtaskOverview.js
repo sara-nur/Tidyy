@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cardLayout.innerHTML = `
         <div class="subtask-overview-card">
           <div class="card-header">
-            <h3>${subtaskDetails.name}</h3>
+            <h4>${subtaskDetails.name}</h4>
             <img src="../Img/virus.png" alt="" />
           </div>
           <p>Priority: ${subtaskDetails.priority}</p>

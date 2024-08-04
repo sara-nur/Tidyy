@@ -10,7 +10,7 @@ const task = sessionStorage.getItem("task");
 let selectedPriority = "Medium"; // Default
 let selectedAssignee = "sara.nur"; // Default
 let selectedAssignedTeam = "Dev"; //Default
-let selectedMember = "Ado"; //Default
+let selectedMember = "ado"; //Default
 let selectedTeam = "Dev";
 
 function GetList(name) {
@@ -123,7 +123,7 @@ for (let i = 0; i < createButton.length; i++) {
           title:
             "You've created a new organization, now available in the sidebar dropdown.",
           showConfirmButton: false,
-          timer: 2000,
+          timer: 1500,
         });
       }
 
@@ -246,13 +246,7 @@ for (let i = 0; i < createButton.length; i++) {
         console.log("teamList:", teamList);
         let newObj = {
           teamName: Name.value,
-          members: [
-            {
-              name: selectedMember,
-              username: selectedMember.replace(" ", "."),
-              email: selectedMember.replace(" ", ".") + "@gmail.com",
-            },
-          ],
+          members: [],
         };
         teamList.push(newObj);
         StringifyList("TeamList", teamList);
@@ -269,7 +263,7 @@ for (let i = 0; i < createButton.length; i++) {
 
       setTimeout(function () {
         window.location.reload();
-      }, 3000);
+      }, 1500);
     });
   });
 }

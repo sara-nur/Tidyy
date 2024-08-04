@@ -10,7 +10,6 @@ let Teams = [
     members: [
       { name: "Sara Nur", username: "sara.nur", email: "sara.nur@gmail.com" },
       { name: "Admir Pasic", username: "ado", email: "ado@gmail.com" },
-      { name: "Jason Voorhees ", username: "jason", email: "jason@gmail.com" },
     ],
   },
   {
