@@ -111,7 +111,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="subtask-overview-card">
           <div class="card-header">
             <h4>${subtaskDetails.name}</h4>
-            <img src="../Img/virus.png" alt="" />
           </div>
           <p>Priority: ${subtaskDetails.priority}</p>
           <p>Progress: ${subtaskDetails.progress}%</p>
