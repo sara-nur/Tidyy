@@ -93,7 +93,6 @@ document.querySelectorAll(".modal").forEach((modal) => {
   });
 });
 
-
 for (let i = 0; i < createButton.length; i++) {
   createButton[i].addEventListener("click", (e) => {
     e.preventDefault();
@@ -119,7 +118,13 @@ for (let i = 0; i < createButton.length; i++) {
           newList.push(Name.value);
           StringifyList("newOrg", newList);
         }
-        alert("You successfully created an Organization");
+        Swal.fire({
+          icon: "success",
+          title:
+            "You've created a new organization, now available in the sidebar dropdown.",
+          showConfirmButton: false,
+          timer: 2000,
+        });
       }
 
       if (
@@ -135,7 +140,12 @@ for (let i = 0; i < createButton.length; i++) {
           newList.push(Name.value);
           StringifyList("NewProject", newList);
         }
-        alert("You successfully created an Project");
+        Swal.fire({
+          icon: "success",
+          title: "You successfully created a new Project",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       }
 
       if (
@@ -221,27 +231,45 @@ for (let i = 0; i < createButton.length; i++) {
           }
         }
         StringifyList("TeamList", teamList);
-        alert("You successfully added an new Member");
+        Swal.fire({
+          icon: "success",
+          title: "You successfully added a new Member",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       }
-   
+
       if (
-        modal[i].getElementsByTagName("h2")[0].innerHTML ===
-        "Create New Team"
-      ){
+        modal[i].getElementsByTagName("h2")[0].innerHTML === "Create New Team"
+      ) {
         let teamList = GetList("TeamList");
-        console.log("teamList:",teamList);
+        console.log("teamList:", teamList);
         let newObj = {
           teamName: Name.value,
-          members: [{name: selectedMember, username: selectedMember.replace(" ","."), email: selectedMember.replace(" ",".")+"@gmail.com"}]
-        }
+          members: [
+            {
+              name: selectedMember,
+              username: selectedMember.replace(" ", "."),
+              email: selectedMember.replace(" ", ".") + "@gmail.com",
+            },
+          ],
+        };
         teamList.push(newObj);
         StringifyList("TeamList", teamList);
-        alert("You successfully created a new Team");
+        Swal.fire({
+          icon: "success",
+          title: "You successfully create a new Team",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       }
 
       modal[i].style.display = "none";
       console.log(Name.value);
-      window.location.reload();
+
+      setTimeout(function () {
+        window.location.reload();
+      }, 3000);
     });
   });
 }

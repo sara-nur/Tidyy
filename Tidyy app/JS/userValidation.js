@@ -5,10 +5,6 @@ let OkBackgroundColor = "#DFF6D8";
 sessionStorage.setItem("org", "");
 sessionStorage.setItem("proj", "");
 
-
-
-
-
 //ERROR MESSAGES
 const errLogin = document.getElementById("error");
 const errLoginEmpty = document.getElementById("errorLoginEmpty");
@@ -39,12 +35,11 @@ let emailsList = ["sara.nur@gmail.com", "ado@gmail.com", "ramo@gmail.com"];
 //VARIABLES
 let timeoutId;
 
-
 //OPEN MODAL
-reg.addEventListener("click", (e)=>{
+reg.addEventListener("click", (e) => {
   e.preventDefault();
-  modal.style.display="block";
-} )
+  modal.style.display = "block";
+});
 
 // Function to save user data to sessionStorage
 function saveUserDataToSessionStorage() {
@@ -65,8 +60,6 @@ function retrieveUserDataFromSessionStorage() {
     emailsList = JSON.parse(sessionStorage.getItem("emailsList"));
   }
 }
-
-
 
 window.addEventListener("load", function () {
   retrieveUserDataFromSessionStorage();
@@ -113,15 +106,31 @@ function RegisterUser() {
     .value.trim();
 
   if (ValidateUserRegister()) {
-    alert(
-      "Uspjesno ste se registrovali! Molimo logujte se da potvrdite svoje kredencijale."
-    );
+    Swal.fire({
+      title:
+        "Great! You’re registered. Redirecting to the login page to confirm your details.",
+      icon: "success",
+      showConfirmButton: false,
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `,
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `,
+      },
+    });
 
     usernamesList.push(usernameRegistracija);
     emailsList.push(emailRegistracija);
     passwordsList.push(passwordRegistracija);
 
-    // Save updated data to sessionStorage
     saveUserDataToSessionStorage();
 
     console.log("Usernames:", usernamesList);
@@ -130,7 +139,7 @@ function RegisterUser() {
 
     setTimeout(function () {
       window.location.href = "index.html";
-    }, 500);
+    }, 3000);
   }
 
   console.log(usernamesList);

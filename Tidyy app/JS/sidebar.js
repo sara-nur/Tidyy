@@ -108,9 +108,15 @@ for (let i = 0; i < modalHeaders.length; i++) {
           });
     } else {
       if (i === 0) {
-        alert("You are not a part of any organisation");
+        Swal.fire({
+          icon: "info",
+          title: "You are not a part of any organization!",
+        });
       } else {
-        alert("You dont have any projects in this organisation");
+        Swal.fire({
+          icon: "info",
+          title: "You dont have any projects in this organisation",
+        });
       }
     }
   });
