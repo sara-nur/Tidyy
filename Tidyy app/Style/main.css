@@ -682,6 +682,13 @@ aside {
   color: black;
 }
 
+.card-header h4 {
+  font-size: 2rem;
+  margin: auto 0;
+  padding-bottom: 1rem;
+  color: white;
+}
+
 .project-card h3 {
   color: var(--TXTCOLOR);
   font-size: 2rem;
