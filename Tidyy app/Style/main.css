@@ -25,7 +25,7 @@
   margin: 0;
   box-sizing: border-box;
   text-decoration: none;
-  color: var(--TXTCOLOR);
+  color: black;
   border: none;
 }
 p {
@@ -34,6 +34,7 @@ p {
 
 h2 {
   font-size: 2rem !important;
+  color: var(--TXTCOLOR);
 }
 
 body {
@@ -177,6 +178,7 @@ form button {
 #loginbtn,
 #createButton {
   height: 45px;
+  color: var(--TXTCOLOR);
 }
 
 input {
@@ -308,6 +310,7 @@ header {
 .search-header figure p {
   padding-right: 0.7rem;
   font-size: 1rem;
+  color: var(--TXTCOLOR);
 }
 
 .search-header span {
@@ -336,6 +339,7 @@ header {
 .search-header h1 {
   padding-left: 4rem;
   font-size: 2.5rem;
+  color: var(--TXTCOLOR);
 }
 
 .profile-options-dropdown {
@@ -352,6 +356,7 @@ header {
   padding: 1rem;
   font-size: 1rem;
   text-align: center;
+  color: var(--TXTCOLOR);
 }
 /* HEADER FOT THE MAIN SITE -CLOSE */
 
@@ -521,6 +526,7 @@ aside {
   border-radius: 0.4rem;
   display: flex;
   align-items: center;
+  color: var(--TXTCOLOR);
 }
 
 .banner-buttons button p {
@@ -601,6 +607,7 @@ aside {
   font-size: 1rem;
   font-weight: bolder;
   text-align: center;
+  color: var(--TXTCOLOR);
 }
 
 /* PROGRES COLUMNS - CLOSE */
@@ -615,9 +622,9 @@ aside {
   width: 40%;
 }
 
-.subtask-overview-card h3 {
+.subtask-overview-card h4 {
   font-size: large;
-  color: var(--TXTCOLOR);
+  color: var(--TXTCOLOR) !important;
   font-size: x-large;
   padding-bottom: 1rem;
 }
@@ -625,6 +632,7 @@ aside {
 .subtask-overview-card p {
   padding: 0.3rem;
   font-size: large;
+  color: var(--TXTCOLOR);
 }
 /*SUBTASK OVERVIEW CARD - CLOSE*/
 
@@ -716,6 +724,7 @@ aside {
 
 .team-card p {
   padding: 15px;
+  color: var(--TXTCOLOR);
 }
 
 .team-layout {
@@ -738,6 +747,7 @@ aside {
 .team-card {
   border-radius: 1rem;
   background-color: var(--FIRSTGRCOLOR);
+  color: var(--TXTCOLOR);
 }
 
 .team-counter p {
@@ -757,6 +767,7 @@ aside {
   border-radius: 0.4rem;
   font-size: 1rem;
   padding: 0.6rem;
+  color: var(--TXTCOLOR);
 }
 
 .modal-dropdown-list-content {
@@ -772,6 +783,7 @@ aside {
 .modal-dropdown-list-content li {
   padding: 0.45rem;
   border-bottom: 1px white solid;
+  color: var(--TXTCOLOR);
 }
 
 .team-info {
