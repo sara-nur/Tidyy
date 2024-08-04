@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (user === "sara.nur") {
       if (org === "HCI") {
-        if (proj === "Project #1") {
+        if (proj === "Seminarski") {
           taskList = JSON.parse(sessionStorage.getItem("Project1Tasks")) || [];
         } else {
           taskList = JSON.parse(sessionStorage.getItem("NewTasks")) || [];

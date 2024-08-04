@@ -1,7 +1,7 @@
 let SaraListOrg = ["HCI", "MPP"];
 let NewListOrg = [];
 
-let HCIListProjects = ["Project #1", "Project #2", "Project #3"];
+let HCIListProjects = ["Seminarski", "Zadace", "Izvjestaj"];
 let NewListProjects = [];
 
 let Teams = [
@@ -25,15 +25,15 @@ let Teams = [
 let Project1Task = [
   {
     id: "task-1",
-    name: "task #1",
+    name: "Prva verzija aplikacije",
     priority: "High",
-    progress: 20,
+    progress: 33,
     asigneedTeam: "Dev",
     subtasks: [
       {
         id: "subtask-1-1",
         taskId: "task-1",
-        name: "sub-task #1",
+        name: "Front-end",
         priority: "High",
         progress: 20,
         asignee: "sara.nur",
@@ -43,7 +43,7 @@ let Project1Task = [
       {
         id: "subtask-1-2",
         taskId: "task-1",
-        name: "sub-task #2",
+        name: "Back-end",
         priority: "Low",
         progress: 100,
         asignee: "sara.nur",
@@ -53,41 +53,11 @@ let Project1Task = [
       {
         id: "subtask-1-3",
         taskId: "task-1",
-        name: "sub-task #3",
+        name: "Editovanje",
         priority: "Medium",
         progress: 90,
         asignee: "ado",
         finished: true,
-        description: "Fix certain parts",
-      },
-      {
-        id: "subtask-1-4",
-        taskId: "task-1",
-        name: "sub-task #4",
-        priority: "Low",
-        progress: 0,
-        asignee: "ado",
-        finished: true,
-        description: "Fix certain parts",
-      },
-      {
-        id: "subtask-1-5",
-        taskId: "task-1",
-        name: "sub-task #5",
-        priority: "High",
-        progress: 20,
-        asignee: "sara.nur",
-        finished: true,
-        description: "Fix certain parts",
-      },
-      {
-        id: "subtask-1-6",
-        taskId: "task-1",
-        name: "sub-task #6",
-        priority: "High",
-        progress: 10,
-        asignee: "ado",
-        finished: false,
         description: "Fix certain parts",
       },
     ],
@@ -95,7 +65,7 @@ let Project1Task = [
 
   {
     id: "task-2",
-    name: "task #2",
+    name: "HTA dijagram",
     priority: "Low",
     progress: 100,
     asigneedTeam: "UI",
@@ -165,7 +135,7 @@ let Project1Task = [
 
   {
     id: "task-3",
-    name: "task #3",
+    name: "Finaln App",
     priority: "Medium",
     progress: 80,
     asigneedTeam: "Dev",
@@ -215,7 +185,7 @@ let Project1Task = [
 
   {
     id: "task-4",
-    name: "task #4",
+    name: "Use case dijagram",
     priority: "Low",
     progress: 0,
     asigneedTeam: "UI",
@@ -225,7 +195,7 @@ let Project1Task = [
         taskId: "task-4",
         name: "sub-task #1",
         priority: "High",
-        progress: 20,
+        progress: 0,
         asignee: "sara.nur",
         finished: false,
         description: "Fix certain parts",
@@ -235,7 +205,7 @@ let Project1Task = [
         taskId: "task-4",
         name: "sub-task #2",
         priority: "Low",
-        progress: 100,
+        progress: 0,
         asignee: "sara.nur",
         finished: false,
         description: "Fix certain parts",
@@ -245,7 +215,7 @@ let Project1Task = [
         taskId: "task-4",
         name: "sub-task #3",
         priority: "Medium",
-        progress: 90,
+        progress: 0,
         asignee: "ado",
         finished: true,
         description: "Fix certain parts",
@@ -265,7 +235,7 @@ let Project1Task = [
 
   {
     id: "task-5",
-    name: "task #5",
+    name: "PMF matrica",
     priority: "High",
     progress: 50,
     asigneedTeam: "Dev",
@@ -312,57 +282,7 @@ let Project1Task = [
       },
     ],
   },
-
-  {
-    id: "task-6",
-    name: "task #6",
-    priority: "High",
-    progress: 10,
-    asigneedTeam: "Dev",
-    subtasks: [
-      {
-        id: "subtask-6-1",
-        taskId: "task-6",
-        name: "sub-task #1",
-        priority: "High",
-        progress: 20,
-        asignee: "sara.nur",
-        finished: false,
-        description: "Fix certain parts",
-      },
-      {
-        id: "subtask-6-2",
-        taskId: "task-6",
-        name: "sub-task #2",
-        priority: "Low",
-        progress: 100,
-        asignee: "sara.nur",
-        finished: false,
-        description: "Fix certain parts",
-      },
-      {
-        id: "subtask-6-3",
-        taskId: "task-6",
-        name: "sub-task #3",
-        priority: "Medium",
-        progress: 90,
-        asignee: "ado",
-        finished: true,
-        description: "Fix certain parts",
-      },
-      {
-        id: "subtask-6-4",
-        taskId: "task-6",
-        name: "sub-task #4",
-        priority: "Low",
-        progress: 0,
-        asignee: "ado",
-        finished: true,
-        description: "Fix certain parts",
-      },
-    ],
-  },
-];
+  ];
 
 let NewTasks = [];
 

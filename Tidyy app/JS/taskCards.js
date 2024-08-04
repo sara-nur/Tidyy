@@ -17,7 +17,7 @@ function GetList(name) {
 
 if (User === "sara.nur") {
   if (org === "HCI") {
-    if (proj === "Project #1") {
+    if (proj === "Seminarski") {
       taskList = GetList("Project1Tasks");
     } else {
       taskList = GetList("NewTasks");

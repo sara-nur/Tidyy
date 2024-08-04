@@ -151,7 +151,7 @@ for (let i = 0; i < createButton.length; i++) {
       if (
         modal[i].getElementsByTagName("h2")[0].innerHTML === "Create New Task"
       ) {
-        if (User === "sara.nur" && org === "HCI" && proj === "Project #1") {
+        if (User === "sara.nur" && org === "HCI" && proj === "Seminarski") {
           let newList = GetList("Project1Tasks");
           let newObj = {
             name: Name.value,
@@ -174,13 +174,19 @@ for (let i = 0; i < createButton.length; i++) {
           newList.push(newObj);
           StringifyList("NewTasks", newList);
         }
+        Swal.fire({
+          icon: "success",
+          title: "You successfully added a new Task",
+          showConfirmButton: false,
+          timer: 1000,
+        });
       }
 
       if (
         modal[i].getElementsByTagName("h2")[0].innerHTML ===
         "Create New Subtask"
       ) {
-        if (User === "sara.nur" && org === "HCI" && proj === "Project #1") {
+        if (User === "sara.nur" && org === "HCI" && proj === "Seminarski") {
           let newList = GetList("Project1Tasks");
           let newObj = {
             name: Name.value,
@@ -210,6 +216,12 @@ for (let i = 0; i < createButton.length; i++) {
             }
           }
           StringifyList("NewTasks", newList);
+          Swal.fire({
+            icon: "success",
+            title: "You successfully added a new Subtask",
+            showConfirmButton: false,
+            timer: 1000,
+          });
         }
       }
 
