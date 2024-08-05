@@ -73,7 +73,7 @@ let Project1Task = [
       {
         id: "subtask-2-1",
         taskId: "task-2",
-        name: "sub-task #1",
+        name: "Analiza podataka",
         priority: "High",
         progress: 20,
         asignee: "sara.nur",
@@ -83,7 +83,7 @@ let Project1Task = [
       {
         id: "subtask-2-2",
         taskId: "task-2",
-        name: "sub-task #2",
+        name: "Dizajn rješenja",
         priority: "Low",
         progress: 100,
         asignee: "sara.nur",
@@ -93,7 +93,7 @@ let Project1Task = [
       {
         id: "subtask-2-3",
         taskId: "task-2",
-        name: "sub-task #3",
+        name: "Verifikacija prototipa",
         priority: "Medium",
         progress: 90,
         asignee: "ado",
@@ -103,7 +103,7 @@ let Project1Task = [
       {
         id: "subtask-2-4",
         taskId: "task-2",
-        name: "sub-task #4",
+        name: "Dokumentacija zahtjeva",
         priority: "Low",
         progress: 0,
         asignee: "ado",
@@ -113,7 +113,7 @@ let Project1Task = [
       {
         id: "subtask-2-5",
         taskId: "task-2",
-        name: "sub-task #5",
+        name: "Testiranje funkcionalnosti",
         priority: "High",
         progress: 20,
         asignee: "sara.nur",
@@ -123,7 +123,7 @@ let Project1Task = [
       {
         id: "subtask-2-6",
         taskId: "task-2",
-        name: "sub-task #6",
+        name: "Revizija dizajna",
         priority: "High",
         progress: 10,
         asignee: "ado",
@@ -135,7 +135,7 @@ let Project1Task = [
 
   {
     id: "task-3",
-    name: "Finaln App",
+    name: "Finalna App",
     priority: "Medium",
     progress: 80,
     asigneedTeam: "Dev",
@@ -143,7 +143,7 @@ let Project1Task = [
       {
         id: "subtask-3-1",
         taskId: "task-3",
-        name: "sub-task #1",
+        name: "Dizajn App",
         priority: "High",
         progress: 20,
         asignee: "sara.nur",
@@ -153,7 +153,7 @@ let Project1Task = [
       {
         id: "subtask-3-2",
         taskId: "task-3",
-        name: "sub-task #2",
+        name: "Kodiranje App",
         priority: "Low",
         progress: 100,
         asignee: "sara.nur",
@@ -163,7 +163,7 @@ let Project1Task = [
       {
         id: "subtask-3-3",
         taskId: "task-3",
-        name: "sub-task #3",
+        name: "Testiranje App",
         priority: "Medium",
         progress: 90,
         asignee: "ado",
@@ -173,7 +173,7 @@ let Project1Task = [
       {
         id: "subtask-3-4",
         taskId: "task-3",
-        name: "sub-task #4",
+        name: "Deploy App",
         priority: "Low",
         progress: 0,
         asignee: "ado",
@@ -193,7 +193,7 @@ let Project1Task = [
       {
         id: "subtask-4-1",
         taskId: "task-4",
-        name: "sub-task #1",
+        name: "Kreiranje Aktera",
         priority: "High",
         progress: 0,
         asignee: "sara.nur",
@@ -203,7 +203,7 @@ let Project1Task = [
       {
         id: "subtask-4-2",
         taskId: "task-4",
-        name: "sub-task #2",
+        name: "Definisanje Koraka",
         priority: "Low",
         progress: 0,
         asignee: "sara.nur",
@@ -213,7 +213,7 @@ let Project1Task = [
       {
         id: "subtask-4-3",
         taskId: "task-4",
-        name: "sub-task #3",
+        name: "erifikacija Dijagrama",
         priority: "Medium",
         progress: 0,
         asignee: "ado",
@@ -223,7 +223,7 @@ let Project1Task = [
       {
         id: "subtask-4-4",
         taskId: "task-4",
-        name: "sub-task #4",
+        name: "Pregled Dokumentacije",
         priority: "Low",
         progress: 0,
         asignee: "ado",
@@ -243,7 +243,7 @@ let Project1Task = [
       {
         id: "subtask-5-1",
         taskId: "task-5",
-        name: "sub-task #1",
+        name: "Analiza Tržišta",
         priority: "High",
         progress: 20,
         asignee: "sara.nur",
@@ -253,7 +253,7 @@ let Project1Task = [
       {
         id: "subtask-5-2",
         taskId: "task-5",
-        name: "sub-task #2",
+        name: "Identifikacija Segmenta",
         priority: "Low",
         progress: 100,
         asignee: "sara.nur",
@@ -263,7 +263,7 @@ let Project1Task = [
       {
         id: "subtask-5-3",
         taskId: "task-5",
-        name: "sub-task #3",
+        name: "Postavljanje Ciljeva",
         priority: "Medium",
         progress: 90,
         asignee: "ado",
@@ -273,7 +273,7 @@ let Project1Task = [
       {
         id: "subtask-5-4",
         taskId: "task-5",
-        name: "sub-task #4",
+        name: "Evaluacija Strategija",
         priority: "Low",
         progress: 0,
         asignee: "ado",
@@ -282,7 +282,7 @@ let Project1Task = [
       },
     ],
   },
-  ];
+];
 
 let NewTasks = [];
 
