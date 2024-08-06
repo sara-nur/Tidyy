@@ -118,8 +118,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>Description: ${subtaskDetails.description}</p>
         </div>`;
 
+        
       // Close the modal
       document.getElementById("createModal").style.display = "none";
+
+      Swal.fire({
+        icon: "success",
+        title:
+          "You've successfully edited the subtask.",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
 
     document.getElementById("CancelBtn").addEventListener("click", () => {

@@ -271,7 +271,6 @@ for (let i = 0; i < createButton.length; i++) {
       }
 
       modal[i].style.display = "none";
-      console.log(Name.value);
 
       setTimeout(function () {
         window.location.reload();
