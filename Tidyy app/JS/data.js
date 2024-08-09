@@ -213,7 +213,7 @@ let Project1Task = [
       {
         id: "subtask-4-3",
         taskId: "task-4",
-        name: "erifikacija Dijagrama",
+        name: "Verifikacija Dijagrama",
         priority: "Medium",
         progress: 0,
         asignee: "ado",
