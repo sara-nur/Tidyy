@@ -2,8 +2,7 @@
 Tidyy is a project management and task-tracking tool designed to simplify and streamline the organization of IT tickets and tasks. It focuses on intuitive user interaction, providing an easy way to track progress and manage both individual and team tasks. The app is built with a user-centered design approach, ensuring a user-friendly and accessible interface.
 
 ## Into
-Checkout this video to see how Tidyy works, in this video there is an explanation for how the app works and is used. 
-
+Watch this video for an in-depth walkthrough of how Tidyy operates. It provides a clear explanation of the app’s features and how to use them effectively.
 
 https://github.com/user-attachments/assets/8c5c9861-0406-49b2-bc54-deaab17ee28b
 
